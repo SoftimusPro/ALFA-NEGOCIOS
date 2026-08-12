@@ -1,0 +1,1990 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ALFA NEGOCIOS | Tecnología, Marketing y Soluciones Digitales</title>
+
+    <meta name="description"
+          content="ALFA NEGOCIOS. Productos electrónicos, piezas de PC, desarrollo web y apps, marketing digital, soluciones financieras e instalación de sistemas operativos.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+
+    <style>
+
+        :root {
+            --black: #111111;
+            --purple: #7A00FF;
+            --purple-dark: #5d00c7;
+            --white: #ffffff;
+            --gray: #666666;
+            --light-gray: #f6f6f8;
+            --border: #e9e9ed;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--white);
+            color: var(--black);
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button {
+            font-family: inherit;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 76px;
+            display: flex;
+            align-items: center;
+            z-index: 1000;
+
+            background: rgba(255,255,255,.88);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+
+            border-bottom: 1px solid rgba(0,0,0,.06);
+        }
+
+        .nav-container {
+            width: min(1180px, 92%);
+            margin: auto;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 900;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: var(--purple);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 34px;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            font-weight: 600;
+            color: #444;
+            transition: .25s;
+        }
+
+        .nav-links a:hover {
+            color: var(--purple);
+        }
+
+        .nav-button {
+            background: var(--black);
+            color: white !important;
+            padding: 12px 19px;
+            border-radius: 10px;
+        }
+
+        .nav-button:hover {
+            background: var(--purple);
+        }
+
+        .menu-btn {
+            display: none;
+            border: none;
+            background: transparent;
+            font-size: 26px;
+            cursor: pointer;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+            padding: 150px 0 90px;
+
+            display: flex;
+            align-items: center;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 550px;
+            height: 550px;
+            border-radius: 50%;
+
+            background: var(--purple);
+
+            filter: blur(130px);
+            opacity: .13;
+
+            right: -180px;
+            top: 50px;
+        }
+
+        .hero-container {
+            width: min(1180px, 92%);
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1.05fr .95fr;
+            gap: 80px;
+
+            align-items: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            background: #f1e8ff;
+            color: var(--purple);
+
+            padding: 8px 13px;
+            border-radius: 100px;
+
+            font-size: 12px;
+            font-weight: 700;
+
+            margin-bottom: 22px;
+        }
+
+        .badge-dot {
+            width: 7px;
+            height: 7px;
+            background: var(--purple);
+            border-radius: 50%;
+        }
+
+        .hero h1 {
+            font-size: clamp(46px, 6vw, 78px);
+            line-height: .98;
+            letter-spacing: -4px;
+            font-weight: 900;
+
+            max-width: 720px;
+        }
+
+        .hero h1 span {
+            color: var(--purple);
+        }
+
+        .hero-description {
+            margin-top: 26px;
+
+            font-size: 17px;
+            line-height: 1.7;
+            color: var(--gray);
+
+            max-width: 600px;
+        }
+
+        .hero-buttons {
+            margin-top: 34px;
+
+            display: flex;
+            gap: 13px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+
+            padding: 15px 23px;
+
+            border-radius: 11px;
+
+            font-size: 14px;
+            font-weight: 700;
+
+            transition: .25s;
+        }
+
+        .btn-primary {
+            background: var(--purple);
+            color: white;
+
+            box-shadow: 0 12px 30px rgba(122,0,255,.20);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            background: var(--purple-dark);
+            box-shadow: 0 16px 35px rgba(122,0,255,.28);
+        }
+
+        .btn-secondary {
+            border: 1px solid var(--border);
+            background: white;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--purple);
+            color: var(--purple);
+        }
+
+        /* Hero visual */
+
+        .hero-visual {
+            position: relative;
+            min-height: 470px;
+        }
+
+        .visual-card {
+            position: absolute;
+
+            background: white;
+
+            border: 1px solid #eeeeef;
+
+            border-radius: 24px;
+
+            box-shadow: 0 25px 70px rgba(0,0,0,.10);
+        }
+
+        .main-card {
+            width: 390px;
+            height: 430px;
+
+            right: 30px;
+            top: 15px;
+
+            padding: 30px;
+
+            overflow: hidden;
+        }
+
+        .main-card::after {
+            content: "";
+            position: absolute;
+
+            width: 250px;
+            height: 250px;
+
+            border-radius: 50%;
+
+            background: var(--purple);
+
+            opacity: .08;
+
+            right: -90px;
+            top: -80px;
+        }
+
+        .card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .mini-logo {
+            font-weight: 900;
+            font-size: 17px;
+        }
+
+        .mini-logo span {
+            color: var(--purple);
+        }
+
+        .circle-icon {
+            width: 40px;
+            height: 40px;
+
+            border-radius: 50%;
+
+            background: #f0e6ff;
+            color: var(--purple);
+
+            display: grid;
+            place-items: center;
+
+            font-weight: 900;
+        }
+
+        .dashboard-title {
+            margin-top: 50px;
+
+            font-size: 13px;
+            color: #888;
+        }
+
+        .dashboard-number {
+            font-size: 46px;
+            font-weight: 900;
+            letter-spacing: -2px;
+
+            margin-top: 5px;
+        }
+
+        .chart {
+            height: 120px;
+
+            margin-top: 30px;
+
+            display: flex;
+            align-items: flex-end;
+            gap: 10px;
+        }
+
+        .bar {
+            flex: 1;
+            border-radius: 7px 7px 2px 2px;
+            background: #e9dcff;
+        }
+
+        .bar:nth-child(1) { height: 38%; }
+        .bar:nth-child(2) { height: 50%; }
+        .bar:nth-child(3) { height: 42%; }
+        .bar:nth-child(4) { height: 65%; }
+        .bar:nth-child(5) { height: 60%; }
+        .bar:nth-child(6) {
+            height: 88%;
+            background: var(--purple);
+        }
+
+        .floating-card {
+            padding: 18px;
+
+            width: 190px;
+
+            left: 0;
+            bottom: 20px;
+        }
+
+        .floating-card p {
+            color: #888;
+            font-size: 11px;
+        }
+
+        .floating-card strong {
+            display: block;
+
+            font-size: 20px;
+
+            margin-top: 5px;
+        }
+
+        .success {
+            color: #14a05a;
+            font-size: 12px;
+            font-weight: 700;
+            margin-top: 5px;
+        }
+
+        /* =========================
+           STATS
+        ========================= */
+
+        .stats {
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 28px 0;
+        }
+
+        .stats-container {
+            width: min(1000px, 92%);
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .stat {
+            text-align: center;
+            border-right: 1px solid var(--border);
+        }
+
+        .stat:last-child {
+            border-right: none;
+        }
+
+        .stat strong {
+            font-size: 25px;
+            font-weight: 900;
+        }
+
+        .stat p {
+            margin-top: 5px;
+            font-size: 12px;
+            color: #777;
+        }
+
+        /* =========================
+           GENERAL SECTIONS
+        ========================= */
+
+        section {
+            padding: 110px 0;
+        }
+
+        .section-container {
+            width: min(1180px, 92%);
+            margin: auto;
+        }
+
+        .section-header {
+            max-width: 680px;
+            margin-bottom: 55px;
+        }
+
+        .section-label {
+            color: var(--purple);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+
+        .section-header h2 {
+            font-size: clamp(35px, 4vw, 53px);
+            letter-spacing: -2.5px;
+            line-height: 1.05;
+            font-weight: 900;
+        }
+
+        .section-header p {
+            margin-top: 18px;
+            color: var(--gray);
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        /* =========================
+           SERVICES
+        ========================= */
+
+        .services {
+            background: #fafafa;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .service-card {
+            background: white;
+
+            border: 1px solid var(--border);
+
+            border-radius: 18px;
+
+            padding: 30px;
+
+            transition: .3s;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: "";
+
+            position: absolute;
+
+            width: 100px;
+            height: 100px;
+
+            border-radius: 50%;
+
+            background: var(--purple);
+
+            opacity: 0;
+
+            filter: blur(30px);
+
+            right: -30px;
+            top: -30px;
+
+            transition: .3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+
+            border-color: #d8bfff;
+
+            box-shadow: 0 20px 50px rgba(0,0,0,.07);
+        }
+
+        .service-card:hover::before {
+            opacity: .12;
+        }
+
+        .service-icon {
+            width: 52px;
+            height: 52px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 13px;
+
+            background: #f1e8ff;
+            color: var(--purple);
+
+            font-size: 22px;
+
+            margin-bottom: 24px;
+        }
+
+        .service-card h3 {
+            font-size: 20px;
+            margin-bottom: 11px;
+        }
+
+        .service-card p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: var(--gray);
+        }
+
+        .service-link {
+            display: inline-block;
+            margin-top: 22px;
+
+            font-size: 13px;
+            font-weight: 800;
+
+            color: var(--purple);
+        }
+
+        /* =========================
+           MARKETING
+        ========================= */
+
+        .marketing {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .marketing-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 90px;
+            align-items: center;
+        }
+
+        .marketing h2 {
+            font-size: clamp(36px, 4vw, 55px);
+            letter-spacing: -2.5px;
+            line-height: 1.05;
+            font-weight: 900;
+        }
+
+        .marketing h2 span {
+            color: var(--purple);
+        }
+
+        .marketing-description {
+            color: var(--gray);
+            line-height: 1.8;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+
+        .marketing-list {
+            margin-top: 28px;
+
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .marketing-list div {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .check {
+            width: 25px;
+            height: 25px;
+
+            border-radius: 50%;
+
+            display: grid;
+            place-items: center;
+
+            background: #eee3ff;
+            color: var(--purple);
+
+            font-size: 12px;
+            font-weight: 900;
+        }
+
+        .marketing-panel {
+            background: var(--black);
+            border-radius: 25px;
+            padding: 35px;
+
+            min-height: 420px;
+
+            position: relative;
+            overflow: hidden;
+
+            color: white;
+        }
+
+        .marketing-panel::before {
+            content: "";
+
+            position: absolute;
+
+            width: 350px;
+            height: 350px;
+
+            background: var(--purple);
+
+            border-radius: 50%;
+
+            filter: blur(100px);
+
+            opacity: .35;
+
+            right: -100px;
+            bottom: -150px;
+        }
+
+        .social-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .social-title {
+            font-weight: 800;
+        }
+
+        .social-status {
+            font-size: 11px;
+            color: #b9ffdb;
+        }
+
+        .followers {
+            margin-top: 55px;
+        }
+
+        .followers small {
+            color: #aaa;
+        }
+
+        .followers strong {
+            display: block;
+            font-size: 52px;
+            margin-top: 5px;
+            letter-spacing: -3px;
+        }
+
+        .growth {
+            color: #b9ffdb;
+            font-size: 13px;
+            font-weight: 700;
+            margin-top: 4px;
+        }
+
+        .fake-chart {
+            height: 110px;
+            margin-top: 35px;
+
+            position: relative;
+
+            display: flex;
+            align-items: flex-end;
+            gap: 7px;
+        }
+
+        .fake-chart span {
+            flex: 1;
+            background: rgba(255,255,255,.16);
+            border-radius: 5px 5px 0 0;
+        }
+
+        .fake-chart span:nth-child(1) { height: 30%; }
+        .fake-chart span:nth-child(2) { height: 40%; }
+        .fake-chart span:nth-child(3) { height: 35%; }
+        .fake-chart span:nth-child(4) { height: 50%; }
+        .fake-chart span:nth-child(5) { height: 47%; }
+        .fake-chart span:nth-child(6) { height: 70%; }
+        .fake-chart span:nth-child(7) { height: 63%; }
+        .fake-chart span:nth-child(8) { height: 90%; }
+
+        /* =========================
+           PRODUCTS
+        ========================= */
+
+        .products {
+            background: #fafafa;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
+        .product {
+            background: white;
+            border: 1px solid var(--border);
+            padding: 25px;
+            border-radius: 17px;
+            transition: .25s;
+        }
+
+        .product:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px rgba(0,0,0,.06);
+        }
+
+        .product-number {
+            font-size: 12px;
+            color: var(--purple);
+            font-weight: 800;
+        }
+
+        .product h3 {
+            font-size: 18px;
+            margin-top: 35px;
+        }
+
+        .product p {
+            color: #777;
+            font-size: 13px;
+            line-height: 1.6;
+            margin-top: 8px;
+        }
+
+        /* =========================
+           PROCESS
+        ========================= */
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .process {
+            padding: 30px;
+            border-left: 2px solid var(--purple);
+        }
+
+        .process-number {
+            font-size: 12px;
+            font-weight: 900;
+            color: var(--purple);
+        }
+
+        .process h3 {
+            margin-top: 18px;
+            font-size: 20px;
+        }
+
+        .process p {
+            margin-top: 10px;
+            color: var(--gray);
+            line-height: 1.7;
+            font-size: 14px;
+        }
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .cta {
+            padding-top: 40px;
+            padding-bottom: 110px;
+        }
+
+        .cta-box {
+            background: var(--purple);
+
+            border-radius: 25px;
+
+            padding: 70px 60px;
+
+            color: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 40px;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-box::after {
+            content: "";
+
+            position: absolute;
+
+            width: 300px;
+            height: 300px;
+
+            border-radius: 50%;
+
+            background: white;
+
+            opacity: .08;
+
+            right: -80px;
+            top: -100px;
+        }
+
+        .cta-box h2 {
+            font-size: clamp(32px, 4vw, 48px);
+            letter-spacing: -2px;
+            line-height: 1.05;
+            max-width: 600px;
+        }
+
+        .cta-box p {
+            margin-top: 15px;
+            color: #eadcff;
+            max-width: 560px;
+            line-height: 1.6;
+        }
+
+        .cta .btn-secondary {
+            background: white;
+            border: none;
+            color: var(--black);
+            flex-shrink: 0;
+        }
+
+        .cta .btn-secondary:hover {
+            background: var(--black);
+            color: white;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: var(--black);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-container {
+            width: min(1180px, 92%);
+            margin: auto;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+
+            padding-bottom: 50px;
+
+            border-bottom: 1px solid #2a2a2a;
+        }
+
+        .footer-brand {
+            max-width: 360px;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 900;
+        }
+
+        .footer-logo span {
+            color: var(--purple);
+        }
+
+        .footer-brand p {
+            margin-top: 14px;
+            color: #888;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 80px;
+        }
+
+        .footer-column h4 {
+            font-size: 13px;
+            margin-bottom: 17px;
+        }
+
+        .footer-column a {
+            display: block;
+            color: #888;
+            font-size: 13px;
+            margin-bottom: 11px;
+            transition: .2s;
+        }
+
+        .footer-column a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            padding-top: 25px;
+
+            display: flex;
+            justify-content: space-between;
+
+            color: #666;
+            font-size: 11px;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .nav-links {
+                position: absolute;
+
+                top: 76px;
+                left: 4%;
+                width: 92%;
+
+                background: white;
+
+                padding: 25px;
+
+                border: 1px solid var(--border);
+                border-radius: 15px;
+
+                display: none;
+                flex-direction: column;
+                align-items: flex-start;
+
+                box-shadow: 0 20px 50px rgba(0,0,0,.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-visual {
+                min-height: 440px;
+            }
+
+            .main-card {
+                right: 5%;
+            }
+
+            .marketing-container {
+                grid-template-columns: 1fr;
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .cta-box {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .footer-top {
+                flex-direction: column;
+            }
+
+        }
+
+        @media (max-width: 600px) {
+
+            .hero {
+                padding-top: 125px;
+            }
+
+            .hero h1 {
+                font-size: 46px;
+                letter-spacing: -2.5px;
+            }
+
+            .hero-description {
+                font-size: 15px;
+            }
+
+            .hero-visual {
+                min-height: 390px;
+            }
+
+            .main-card {
+                width: 90%;
+                height: 360px;
+                right: 0;
+            }
+
+            .floating-card {
+                left: 0;
+                bottom: 0;
+            }
+
+            .dashboard-number {
+                font-size: 38px;
+            }
+
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px 0;
+            }
+
+            .stat:nth-child(2) {
+                border-right: none;
+            }
+
+            .stat:nth-child(3),
+            .stat:nth-child(4) {
+                border-top: 1px solid var(--border);
+                padding-top: 20px;
+            }
+
+            section {
+                padding: 80px 0;
+            }
+
+            .services-grid,
+            .product-grid,
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .marketing-container {
+                gap: 45px;
+            }
+
+            .marketing-panel {
+                min-height: 370px;
+            }
+
+            .cta-box {
+                padding: 45px 30px;
+            }
+
+            .footer-links {
+                gap: 40px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<header class="navbar">
+
+    <div class="nav-container">
+
+        <a href="#" class="logo">
+            ALFA<span>.</span>
+        </a>
+
+        <button class="menu-btn" id="menuBtn">
+            ☰
+        </button>
+
+        <ul class="nav-links" id="navLinks">
+
+            <li>
+                <a href="#servicios">Servicios</a>
+            </li>
+
+            <li>
+                <a href="#marketing">Marketing</a>
+            </li>
+
+            <li>
+                <a href="#productos">Productos</a>
+            </li>
+
+            <li>
+                <a href="#proceso">Cómo trabajamos</a>
+            </li>
+
+            <li>
+                <a href="#contacto" class="nav-button">
+                    Contactar
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <div class="hero-container">
+
+        <div class="hero-content">
+
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                Soluciones para negocios
+            </div>
+
+            <h1>
+                Tu negocio.
+                <span>Más ALFA.</span>
+            </h1>
+
+            <p class="hero-description">
+                Tecnología, marketing y soluciones digitales para hacer
+                crecer tu negocio. Productos electrónicos, desarrollo web,
+                aplicaciones, marketing práctico y mucho más.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#servicios" class="btn btn-primary">
+                    Explorar servicios
+                    →
+                </a>
+
+                <a href="#contacto" class="btn btn-secondary">
+                    Hablar con ALFA
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- VISUAL -->
+
+        <div class="hero-visual">
+
+            <div class="visual-card main-card">
+
+                <div class="card-top">
+
+                    <div class="mini-logo">
+                        ALFA<span>.</span>
+                    </div>
+
+                    <div class="circle-icon">
+                        ↗
+                    </div>
+
+                </div>
+
+                <div class="dashboard-title">
+                    CRECIMIENTO DEL NEGOCIO
+                </div>
+
+                <div class="dashboard-number">
+                    +84.7%
+                </div>
+
+                <div class="chart">
+
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+
+                </div>
+
+            </div>
+
+
+            <div class="visual-card floating-card">
+
+                <p>
+                    RESULTADOS
+                </p>
+
+                <strong>
+                    Más clientes
+                </strong>
+
+                <div class="success">
+                    ↑ Crecimiento
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     STATS
+========================= -->
+
+<section class="stats">
+
+    <div class="stats-container">
+
+        <div class="stat">
+            <strong>360°</strong>
+            <p>Soluciones digitales</p>
+        </div>
+
+        <div class="stat">
+            <strong>100%</strong>
+            <p>Enfoque práctico</p>
+        </div>
+
+        <div class="stat">
+            <strong>24/7</strong>
+            <p>Soluciones digitales</p>
+        </div>
+
+        <div class="stat">
+            <strong>ALFA</strong>
+            <p>Para hacer crecer tu negocio</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SERVICES
+========================= -->
+
+<section class="services" id="servicios">
+
+    <div class="section-container">
+
+        <div class="section-header">
+
+            <div class="section-label">
+                Lo que hacemos
+            </div>
+
+            <h2>
+                Una empresa.
+                Muchas soluciones.
+            </h2>
+
+            <p>
+                Desde el hardware que necesitas hasta la estrategia digital
+                que hará crecer tu negocio.
+            </p>
+
+        </div>
+
+
+        <div class="services-grid">
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    ⚡
+                </div>
+
+                <h3>
+                    Productos electrónicos
+                </h3>
+
+                <p>
+                    Tecnología y productos electrónicos para uso personal,
+                    profesional y empresarial.
+                </p>
+
+                <a href="#contacto" class="service-link">
+                    Ver productos →
+                </a>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    ◈
+                </div>
+
+                <h3>
+                    Desarrollo web
+                </h3>
+
+                <p>
+                    Creamos páginas web y soluciones digitales pensadas
+                    para que tu empresa venda, comunique y crezca.
+                </p>
+
+                <a href="#contacto" class="service-link">
+                    Crear mi web →
+                </a>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    ◎
+                </div>
+
+                <h3>
+                    Desarrollo de apps
+                </h3>
+
+                <p>
+                    Aplicaciones móviles y herramientas digitales
+                    adaptadas a las necesidades reales de tu negocio.
+                </p>
+
+                <a href="#contacto" class="service-link">
+                    Desarrollar una app →
+                </a>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    $
+                </div>
+
+                <h3>
+                    Soluciones financieras
+                </h3>
+
+                <p>
+                    Herramientas y soluciones orientadas a facilitar
+                    la gestión financiera de negocios.
+                </p>
+
+                <a href="#contacto" class="service-link">
+                    Conocer soluciones →
+                </a>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    ◫
+                </div>
+
+                <h3>
+                    Piezas de PC
+                </h3>
+
+                <p>
+                    Componentes y piezas para actualizar, reparar o
+                    construir tu PC.
+                </p>
+
+                <a href="#contacto" class="service-link">
+                    Buscar componente →
+                </a>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    ⚙
+                </div>
+
+                <h3>
+                    Sistemas operativos
+                </h3>
+
+                <p>
+                    Instalación y configuración de sistemas operativos,
+                    software y equipos.
+                </p>
+
+                <a href="#contacto" class="service-link">
+                    Solicitar instalación →
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     MARKETING
+========================= -->
+
+<section class="marketing" id="marketing">
+
+    <div class="section-container marketing-container">
+
+
+        <div>
+
+            <div class="section-label">
+                Marketing práctico
+            </div>
+
+            <h2>
+                No publiques
+                por publicar.
+                <span>Vende.</span>
+            </h2>
+
+            <p class="marketing-description">
+                Diseñamos estrategias digitales adaptadas a la realidad
+                de Cuba. Porque tener seguidores está bien, pero convertirlos
+                en clientes es bastante más interesante.
+            </p>
+
+
+            <div class="marketing-list">
+
+                <div>
+                    <span class="check">✓</span>
+                    Estrategias adaptadas al mercado cubano
+                </div>
+
+                <div>
+                    <span class="check">✓</span>
+                    Contenido pensado para vender
+                </div>
+
+                <div>
+                    <span class="check">✓</span>
+                    Optimización de redes sociales
+                </div>
+
+                <div>
+                    <span class="check">✓</span>
+                    Embudos para convertir seguidores en clientes
+                </div>
+
+            </div>
+
+            <div style="margin-top:30px;">
+
+                <a href="#contacto" class="btn btn-primary">
+                    Potenciar mi negocio →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="marketing-panel">
+
+            <div class="social-header">
+
+                <div class="social-title">
+                    ALFA Marketing
+                </div>
+
+                <div class="social-status">
+                    ● ACTIVO
+                </div>
+
+            </div>
+
+
+            <div class="followers">
+
+                <small>
+                    ALCANCE DIGITAL
+                </small>
+
+                <strong>
+                    +128K
+                </strong>
+
+                <div class="growth">
+                    ↑ +32.4% este mes
+                </div>
+
+            </div>
+
+
+            <div class="fake-chart">
+
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PRODUCTS
+========================= -->
+
+<section class="products" id="productos">
+
+    <div class="section-container">
+
+        <div class="section-header">
+
+            <div class="section-label">
+                Tecnología
+            </div>
+
+            <h2>
+                El hardware que necesitas.
+            </h2>
+
+            <p>
+                Desde componentes para PC hasta productos electrónicos
+                para tu día a día.
+            </p>
+
+        </div>
+
+
+        <div class="product-grid">
+
+            <div class="product">
+
+                <div class="product-number">
+                    01
+                </div>
+
+                <h3>
+                    Componentes PC
+                </h3>
+
+                <p>
+                    Procesadores, tarjetas gráficas, memorias,
+                    almacenamiento y más.
+                </p>
+
+            </div>
+
+
+            <div class="product">
+
+                <div class="product-number">
+                    02
+                </div>
+
+                <h3>
+                    Periféricos
+                </h3>
+
+                <p>
+                    Teclados, ratones, auriculares, monitores
+                    y accesorios.
+                </p>
+
+            </div>
+
+
+            <div class="product">
+
+                <div class="product-number">
+                    03
+                </div>
+
+                <h3>
+                    Electrónica
+                </h3>
+
+                <p>
+                    Productos tecnológicos seleccionados para
+                    diferentes necesidades.
+                </p>
+
+            </div>
+
+
+            <div class="product">
+
+                <div class="product-number">
+                    04
+                </div>
+
+                <h3>
+                    Software
+                </h3>
+
+                <p>
+                    Instalación, configuración y puesta a punto
+                    de tus equipos.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PROCESS
+========================= -->
+
+<section id="proceso">
+
+    <div class="section-container">
+
+        <div class="section-header">
+
+            <div class="section-label">
+                Cómo trabajamos
+            </div>
+
+            <h2>
+                Simple. Directo.
+                Sin complicaciones.
+            </h2>
+
+        </div>
+
+
+        <div class="process-grid">
+
+            <div class="process">
+
+                <div class="process-number">
+                    01 / ANALIZAMOS
+                </div>
+
+                <h3>
+                    Entendemos tu necesidad
+                </h3>
+
+                <p>
+                    Primero conocemos tu negocio, problema o proyecto
+                    antes de recomendarte cualquier solución.
+                </p>
+
+            </div>
+
+
+            <div class="process">
+
+                <div class="process-number">
+                    02 / CREAMOS
+                </div>
+
+                <h3>
+                    Diseñamos la solución
+                </h3>
+
+                <p>
+                    Combinamos tecnología, estrategia y creatividad
+                    para construir algo que realmente puedas utilizar.
+                </p>
+
+            </div>
+
+
+            <div class="process">
+
+                <div class="process-number">
+                    03 / CRECEMOS
+                </div>
+
+                <h3>
+                    Lo llevamos al siguiente nivel
+                </h3>
+
+                <p>
+                    Medimos, mejoramos y adaptamos la solución para
+                    que siga funcionando mientras tu negocio crece.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="cta" id="contacto">
+
+    <div class="section-container">
+
+        <div class="cta-box">
+
+            <div>
+
+                <h2>
+                    Hagamos que tu negocio sea más ALFA.
+                </h2>
+
+                <p>
+                    Cuéntanos qué necesitas y encontremos juntos
+                    la solución.
+                </p>
+
+            </div>
+
+
+            <a href="https://wa.me/51361974" class="btn btn-secondary">
+                Contactar por WhatsApp
+                →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="footer-container">
+
+        <div class="footer-top">
+
+
+            <div class="footer-brand">
+
+                <div class="footer-logo">
+                    ALFA<span>.</span>
+                </div>
+
+                <p>
+                    Tecnología, marketing y soluciones digitales
+                    para negocios que quieren avanzar.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <div class="footer-column">
+
+                    <h4>
+                        Servicios
+                    </h4>
+
+                    <a href="#servicios">
+                        Desarrollo web
+                    </a>
+
+                    <a href="#servicios">
+                        Desarrollo de apps
+                    </a>
+
+                    <a href="#servicios">
+                        Marketing
+                    </a>
+
+                    <a href="#servicios">
+                        Soluciones financieras
+                    </a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h4>
+                        Tecnología
+                    </h4>
+
+                    <a href="#productos">
+                        Productos electrónicos
+                    </a>
+
+                    <a href="#productos">
+                        Piezas de PC
+                    </a>
+
+                    <a href="#servicios">
+                        Sistemas operativos
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 ALFA NEGOCIOS. Todos los derechos reservados.
+            </span>
+
+            <span>
+                Tecnología que mueve negocios.
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+    });
+
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            navLinks.classList.remove("active");
+
+        });
+
+    });
+
+
+    // Animaciones al aparecer en pantalla
+
+    const observer = new IntersectionObserver(
+        entries => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.12
+        }
+    );
+
+
+    document.querySelectorAll(
+        ".service-card, .product, .process, .section-header"
+    ).forEach(element => {
+
+        element.style.opacity = "0";
+        element.style.transform = "translateY(25px)";
+        element.style.transition = "opacity .6s ease, transform .6s ease";
+
+        observer.observe(element);
+
+    });
+
+</script>
+
+</body>
+</html>
