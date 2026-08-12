@@ -4,28 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>ALFA NEGOCIOS | Tecnología, Marketing y Soluciones Digitales</title>
+    <title>Portfolio | ALFA NEGOCIOS</title>
 
-    <meta name="description"
-          content="ALFA NEGOCIOS. Productos electrónicos, piezas de PC, desarrollo web y apps, marketing digital, soluciones financieras e instalación de sistemas operativos.">
+    <meta
+        name="description"
+        content="Portfolio de ALFA NEGOCIOS. Desarrollo web, aplicaciones, software, automatización y marketing digital."
+    >
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-          rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
 
     <style>
 
         :root {
             --black: #111111;
             --purple: #7A00FF;
-            --purple-dark: #5d00c7;
+            --purple-dark: #6200cc;
+            --purple-light: #f1e8ff;
+
             --white: #ffffff;
-            --gray: #666666;
-            --light-gray: #f6f6f8;
-            --border: #e9e9ed;
+
+            --gray-50: #fafafa;
+            --gray-100: #f6f6f8;
+            --gray-200: #ededf0;
+            --gray-400: #999999;
+            --gray-500: #777777;
+            --gray-600: #5f5f63;
+
+            --border: #e7e7eb;
+
+            --green: #11956b;
+
+            --shadow:
+                0 25px 70px rgba(17,17,17,.08);
         }
+
 
         * {
             margin: 0;
@@ -33,276 +51,139 @@
             box-sizing: border-box;
         }
 
+
         html {
             scroll-behavior: smooth;
         }
 
+
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: "Inter", sans-serif;
             background: var(--white);
             color: var(--black);
             overflow-x: hidden;
         }
+
+
+        body.modal-open {
+            overflow: hidden;
+        }
+
 
         a {
             text-decoration: none;
             color: inherit;
         }
 
-        button {
+
+        button,
+        input {
             font-family: inherit;
         }
 
-        /* =========================
+
+        .container {
+            width: min(1180px, 92%);
+            margin: auto;
+        }
+
+
+        /* =====================================
            NAVBAR
-        ========================= */
+        ===================================== */
 
         .navbar {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            height: 76px;
-            display: flex;
-            align-items: center;
+            height: 74px;
             z-index: 1000;
 
             background: rgba(255,255,255,.88);
             backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
 
             border-bottom: 1px solid rgba(0,0,0,.06);
         }
 
-        .nav-container {
-            width: min(1180px, 92%);
-            margin: auto;
+
+        .nav-inner {
+            height: 100%;
 
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
         }
+
 
         .logo {
             font-size: 22px;
             font-weight: 900;
-            letter-spacing: -1px;
+            letter-spacing: -1.3px;
         }
+
 
         .logo span {
             color: var(--purple);
         }
 
+
         .nav-links {
             display: flex;
-            gap: 34px;
             align-items: center;
-            list-style: none;
+            gap: 24px;
         }
 
+
         .nav-links a {
-            font-size: 14px;
-            font-weight: 600;
-            color: #444;
-            transition: .25s;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--gray-600);
+            transition: .2s;
         }
+
 
         .nav-links a:hover {
             color: var(--purple);
         }
 
-        .nav-button {
+
+        .nav-cta {
+            padding: 10px 16px;
+
             background: var(--black);
             color: white !important;
-            padding: 12px 19px;
-            border-radius: 10px;
+
+            border-radius: 9px;
         }
 
-        .nav-button:hover {
+
+        .nav-cta:hover {
             background: var(--purple);
         }
 
-        .menu-btn {
-            display: none;
-            border: none;
-            background: transparent;
-            font-size: 26px;
-            cursor: pointer;
-        }
 
-        /* =========================
+        /* =====================================
            HERO
-        ========================= */
+        ===================================== */
 
         .hero {
-            min-height: 100vh;
-            padding: 150px 0 90px;
-
-            display: flex;
-            align-items: center;
-
             position: relative;
+            padding: 170px 0 110px;
             overflow: hidden;
         }
+
 
         .hero::before {
             content: "";
-            position: absolute;
-            width: 550px;
-            height: 550px;
-            border-radius: 50%;
 
-            background: var(--purple);
-
-            filter: blur(130px);
-            opacity: .13;
-
-            right: -180px;
-            top: 50px;
-        }
-
-        .hero-container {
-            width: min(1180px, 92%);
-            margin: auto;
-
-            display: grid;
-            grid-template-columns: 1.05fr .95fr;
-            gap: 80px;
-
-            align-items: center;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-
-            background: #f1e8ff;
-            color: var(--purple);
-
-            padding: 8px 13px;
-            border-radius: 100px;
-
-            font-size: 12px;
-            font-weight: 700;
-
-            margin-bottom: 22px;
-        }
-
-        .badge-dot {
-            width: 7px;
-            height: 7px;
-            background: var(--purple);
-            border-radius: 50%;
-        }
-
-        .hero h1 {
-            font-size: clamp(46px, 6vw, 78px);
-            line-height: .98;
-            letter-spacing: -4px;
-            font-weight: 900;
-
-            max-width: 720px;
-        }
-
-        .hero h1 span {
-            color: var(--purple);
-        }
-
-        .hero-description {
-            margin-top: 26px;
-
-            font-size: 17px;
-            line-height: 1.7;
-            color: var(--gray);
-
-            max-width: 600px;
-        }
-
-        .hero-buttons {
-            margin-top: 34px;
-
-            display: flex;
-            gap: 13px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 9px;
-
-            padding: 15px 23px;
-
-            border-radius: 11px;
-
-            font-size: 14px;
-            font-weight: 700;
-
-            transition: .25s;
-        }
-
-        .btn-primary {
-            background: var(--purple);
-            color: white;
-
-            box-shadow: 0 12px 30px rgba(122,0,255,.20);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            background: var(--purple-dark);
-            box-shadow: 0 16px 35px rgba(122,0,255,.28);
-        }
-
-        .btn-secondary {
-            border: 1px solid var(--border);
-            background: white;
-        }
-
-        .btn-secondary:hover {
-            border-color: var(--purple);
-            color: var(--purple);
-        }
-
-        /* Hero visual */
-
-        .hero-visual {
-            position: relative;
-            min-height: 470px;
-        }
-
-        .visual-card {
             position: absolute;
 
-            background: white;
+            width: 650px;
+            height: 650px;
 
-            border: 1px solid #eeeeef;
-
-            border-radius: 24px;
-
-            box-shadow: 0 25px 70px rgba(0,0,0,.10);
-        }
-
-        .main-card {
-            width: 390px;
-            height: 430px;
-
-            right: 30px;
-            top: 15px;
-
-            padding: 30px;
-
-            overflow: hidden;
-        }
-
-        .main-card::after {
-            content: "";
-            position: absolute;
-
-            width: 250px;
-            height: 250px;
+            right: -300px;
+            top: -200px;
 
             border-radius: 50%;
 
@@ -310,560 +191,11 @@
 
             opacity: .08;
 
-            right: -90px;
-            top: -80px;
-        }
-
-        .card-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .mini-logo {
-            font-weight: 900;
-            font-size: 17px;
-        }
-
-        .mini-logo span {
-            color: var(--purple);
-        }
-
-        .circle-icon {
-            width: 40px;
-            height: 40px;
-
-            border-radius: 50%;
-
-            background: #f0e6ff;
-            color: var(--purple);
-
-            display: grid;
-            place-items: center;
-
-            font-weight: 900;
-        }
-
-        .dashboard-title {
-            margin-top: 50px;
-
-            font-size: 13px;
-            color: #888;
-        }
-
-        .dashboard-number {
-            font-size: 46px;
-            font-weight: 900;
-            letter-spacing: -2px;
-
-            margin-top: 5px;
-        }
-
-        .chart {
-            height: 120px;
-
-            margin-top: 30px;
-
-            display: flex;
-            align-items: flex-end;
-            gap: 10px;
-        }
-
-        .bar {
-            flex: 1;
-            border-radius: 7px 7px 2px 2px;
-            background: #e9dcff;
-        }
-
-        .bar:nth-child(1) { height: 38%; }
-        .bar:nth-child(2) { height: 50%; }
-        .bar:nth-child(3) { height: 42%; }
-        .bar:nth-child(4) { height: 65%; }
-        .bar:nth-child(5) { height: 60%; }
-        .bar:nth-child(6) {
-            height: 88%;
-            background: var(--purple);
-        }
-
-        .floating-card {
-            padding: 18px;
-
-            width: 190px;
-
-            left: 0;
-            bottom: 20px;
-        }
-
-        .floating-card p {
-            color: #888;
-            font-size: 11px;
-        }
-
-        .floating-card strong {
-            display: block;
-
-            font-size: 20px;
-
-            margin-top: 5px;
-        }
-
-        .success {
-            color: #14a05a;
-            font-size: 12px;
-            font-weight: 700;
-            margin-top: 5px;
-        }
-
-        /* =========================
-           STATS
-        ========================= */
-
-        .stats {
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-            padding: 28px 0;
-        }
-
-        .stats-container {
-            width: min(1000px, 92%);
-            margin: auto;
-
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-        }
-
-        .stat {
-            text-align: center;
-            border-right: 1px solid var(--border);
-        }
-
-        .stat:last-child {
-            border-right: none;
-        }
-
-        .stat strong {
-            font-size: 25px;
-            font-weight: 900;
-        }
-
-        .stat p {
-            margin-top: 5px;
-            font-size: 12px;
-            color: #777;
-        }
-
-        /* =========================
-           GENERAL SECTIONS
-        ========================= */
-
-        section {
-            padding: 110px 0;
-        }
-
-        .section-container {
-            width: min(1180px, 92%);
-            margin: auto;
-        }
-
-        .section-header {
-            max-width: 680px;
-            margin-bottom: 55px;
-        }
-
-        .section-label {
-            color: var(--purple);
-            font-size: 12px;
-            font-weight: 800;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            margin-bottom: 14px;
-        }
-
-        .section-header h2 {
-            font-size: clamp(35px, 4vw, 53px);
-            letter-spacing: -2.5px;
-            line-height: 1.05;
-            font-weight: 900;
-        }
-
-        .section-header p {
-            margin-top: 18px;
-            color: var(--gray);
-            line-height: 1.7;
-            font-size: 16px;
-        }
-
-        /* =========================
-           SERVICES
-        ========================= */
-
-        .services {
-            background: #fafafa;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-        }
-
-        .service-card {
-            background: white;
-
-            border: 1px solid var(--border);
-
-            border-radius: 18px;
-
-            padding: 30px;
-
-            transition: .3s;
-
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card::before {
-            content: "";
-
-            position: absolute;
-
-            width: 100px;
-            height: 100px;
-
-            border-radius: 50%;
-
-            background: var(--purple);
-
-            opacity: 0;
-
-            filter: blur(30px);
-
-            right: -30px;
-            top: -30px;
-
-            transition: .3s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-6px);
-
-            border-color: #d8bfff;
-
-            box-shadow: 0 20px 50px rgba(0,0,0,.07);
-        }
-
-        .service-card:hover::before {
-            opacity: .12;
-        }
-
-        .service-icon {
-            width: 52px;
-            height: 52px;
-
-            display: grid;
-            place-items: center;
-
-            border-radius: 13px;
-
-            background: #f1e8ff;
-            color: var(--purple);
-
-            font-size: 22px;
-
-            margin-bottom: 24px;
-        }
-
-        .service-card h3 {
-            font-size: 20px;
-            margin-bottom: 11px;
-        }
-
-        .service-card p {
-            font-size: 14px;
-            line-height: 1.7;
-            color: var(--gray);
-        }
-
-        .service-link {
-            display: inline-block;
-            margin-top: 22px;
-
-            font-size: 13px;
-            font-weight: 800;
-
-            color: var(--purple);
-        }
-
-        /* =========================
-           MARKETING
-        ========================= */
-
-        .marketing {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .marketing-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 90px;
-            align-items: center;
-        }
-
-        .marketing h2 {
-            font-size: clamp(36px, 4vw, 55px);
-            letter-spacing: -2.5px;
-            line-height: 1.05;
-            font-weight: 900;
-        }
-
-        .marketing h2 span {
-            color: var(--purple);
-        }
-
-        .marketing-description {
-            color: var(--gray);
-            line-height: 1.8;
-            margin-top: 20px;
-            font-size: 16px;
-        }
-
-        .marketing-list {
-            margin-top: 28px;
-
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .marketing-list div {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        .check {
-            width: 25px;
-            height: 25px;
-
-            border-radius: 50%;
-
-            display: grid;
-            place-items: center;
-
-            background: #eee3ff;
-            color: var(--purple);
-
-            font-size: 12px;
-            font-weight: 900;
-        }
-
-        .marketing-panel {
-            background: var(--black);
-            border-radius: 25px;
-            padding: 35px;
-
-            min-height: 420px;
-
-            position: relative;
-            overflow: hidden;
-
-            color: white;
-        }
-
-        .marketing-panel::before {
-            content: "";
-
-            position: absolute;
-
-            width: 350px;
-            height: 350px;
-
-            background: var(--purple);
-
-            border-radius: 50%;
-
             filter: blur(100px);
-
-            opacity: .35;
-
-            right: -100px;
-            bottom: -150px;
         }
 
-        .social-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
 
-        .social-title {
-            font-weight: 800;
-        }
-
-        .social-status {
-            font-size: 11px;
-            color: #b9ffdb;
-        }
-
-        .followers {
-            margin-top: 55px;
-        }
-
-        .followers small {
-            color: #aaa;
-        }
-
-        .followers strong {
-            display: block;
-            font-size: 52px;
-            margin-top: 5px;
-            letter-spacing: -3px;
-        }
-
-        .growth {
-            color: #b9ffdb;
-            font-size: 13px;
-            font-weight: 700;
-            margin-top: 4px;
-        }
-
-        .fake-chart {
-            height: 110px;
-            margin-top: 35px;
-
-            position: relative;
-
-            display: flex;
-            align-items: flex-end;
-            gap: 7px;
-        }
-
-        .fake-chart span {
-            flex: 1;
-            background: rgba(255,255,255,.16);
-            border-radius: 5px 5px 0 0;
-        }
-
-        .fake-chart span:nth-child(1) { height: 30%; }
-        .fake-chart span:nth-child(2) { height: 40%; }
-        .fake-chart span:nth-child(3) { height: 35%; }
-        .fake-chart span:nth-child(4) { height: 50%; }
-        .fake-chart span:nth-child(5) { height: 47%; }
-        .fake-chart span:nth-child(6) { height: 70%; }
-        .fake-chart span:nth-child(7) { height: 63%; }
-        .fake-chart span:nth-child(8) { height: 90%; }
-
-        /* =========================
-           PRODUCTS
-        ========================= */
-
-        .products {
-            background: #fafafa;
-        }
-
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 16px;
-        }
-
-        .product {
-            background: white;
-            border: 1px solid var(--border);
-            padding: 25px;
-            border-radius: 17px;
-            transition: .25s;
-        }
-
-        .product:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 15px 35px rgba(0,0,0,.06);
-        }
-
-        .product-number {
-            font-size: 12px;
-            color: var(--purple);
-            font-weight: 800;
-        }
-
-        .product h3 {
-            font-size: 18px;
-            margin-top: 35px;
-        }
-
-        .product p {
-            color: #777;
-            font-size: 13px;
-            line-height: 1.6;
-            margin-top: 8px;
-        }
-
-        /* =========================
-           PROCESS
-        ========================= */
-
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .process {
-            padding: 30px;
-            border-left: 2px solid var(--purple);
-        }
-
-        .process-number {
-            font-size: 12px;
-            font-weight: 900;
-            color: var(--purple);
-        }
-
-        .process h3 {
-            margin-top: 18px;
-            font-size: 20px;
-        }
-
-        .process p {
-            margin-top: 10px;
-            color: var(--gray);
-            line-height: 1.7;
-            font-size: 14px;
-        }
-
-        /* =========================
-           CTA
-        ========================= */
-
-        .cta {
-            padding-top: 40px;
-            padding-bottom: 110px;
-        }
-
-        .cta-box {
-            background: var(--purple);
-
-            border-radius: 25px;
-
-            padding: 70px 60px;
-
-            color: white;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            gap: 40px;
-
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-box::after {
+        .hero::after {
             content: "";
 
             position: absolute;
@@ -871,416 +203,1522 @@
             width: 300px;
             height: 300px;
 
+            left: -180px;
+            bottom: -180px;
+
             border-radius: 50%;
 
-            background: white;
+            background: var(--purple);
 
-            opacity: .08;
+            opacity: .05;
 
-            right: -80px;
-            top: -100px;
+            filter: blur(80px);
         }
 
-        .cta-box h2 {
-            font-size: clamp(32px, 4vw, 48px);
-            letter-spacing: -2px;
-            line-height: 1.05;
-            max-width: 600px;
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
         }
 
-        .cta-box p {
-            margin-top: 15px;
-            color: #eadcff;
-            max-width: 560px;
-            line-height: 1.6;
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            padding: 8px 12px;
+
+            border-radius: 100px;
+
+            background: var(--purple-light);
+            color: var(--purple);
+
+            font-size: 9px;
+            font-weight: 900;
+
+            letter-spacing: .8px;
+            text-transform: uppercase;
         }
 
-        .cta .btn-secondary {
-            background: white;
-            border: none;
-            color: var(--black);
-            flex-shrink: 0;
+
+        .eyebrow-dot {
+            width: 6px;
+            height: 6px;
+
+            background: var(--purple);
+
+            border-radius: 50%;
         }
 
-        .cta .btn-secondary:hover {
-            background: var(--black);
-            color: white;
-        }
 
-        /* =========================
-           FOOTER
-        ========================= */
+        .hero h1 {
+            max-width: 900px;
 
-        footer {
-            background: var(--black);
-            color: white;
-            padding: 60px 0 30px;
-        }
+            margin-top: 22px;
 
-        .footer-container {
-            width: min(1180px, 92%);
-            margin: auto;
-        }
+            font-size: clamp(50px, 8vw, 88px);
 
-        .footer-top {
-            display: flex;
-            justify-content: space-between;
-            gap: 40px;
+            line-height: .95;
 
-            padding-bottom: 50px;
+            letter-spacing: -5px;
 
-            border-bottom: 1px solid #2a2a2a;
-        }
-
-        .footer-brand {
-            max-width: 360px;
-        }
-
-        .footer-logo {
-            font-size: 24px;
             font-weight: 900;
         }
+
+
+        .hero h1 span {
+            color: var(--purple);
+        }
+
+
+        .hero-description {
+            max-width: 650px;
+
+            margin-top: 26px;
+
+            color: var(--gray-600);
+
+            font-size: 15px;
+
+            line-height: 1.8;
+        }
+
+
+        .hero-bottom {
+            margin-top: 48px;
+
+            display: flex;
+            align-items: center;
+
+            gap: 35px;
+        }
+
+
+        .hero-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+
+            padding: 14px 19px;
+
+            background: var(--black);
+            color: white;
+
+            border-radius: 10px;
+
+            font-size: 11px;
+            font-weight: 800;
+
+            transition: .2s;
+        }
+
+
+        .hero-button:hover {
+            background: var(--purple);
+            transform: translateY(-2px);
+        }
+
+
+        .hero-note {
+            color: var(--gray-400);
+            font-size: 10px;
+            line-height: 1.5;
+        }
+
+
+        /* =====================================
+           NUMBERS
+        ===================================== */
+
+        .numbers {
+            padding-bottom: 100px;
+        }
+
+
+        .numbers-grid {
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+
+        .number-item {
+            padding: 28px 20px;
+
+            border-right: 1px solid var(--border);
+        }
+
+
+        .number-item:last-child {
+            border-right: none;
+        }
+
+
+        .number {
+            font-size: 29px;
+            font-weight: 900;
+            letter-spacing: -1.5px;
+        }
+
+
+        .number-label {
+            margin-top: 6px;
+
+            color: var(--gray-500);
+
+            font-size: 9px;
+            font-weight: 600;
+        }
+
+
+        /* =====================================
+           PORTFOLIO SECTION
+        ===================================== */
+
+        .portfolio {
+            padding-bottom: 120px;
+        }
+
+
+        .section-header {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+
+            gap: 30px;
+
+            margin-bottom: 30px;
+        }
+
+
+        .section-title h2 {
+            font-size: 31px;
+            letter-spacing: -1.7px;
+        }
+
+
+        .section-title p {
+            margin-top: 7px;
+
+            color: var(--gray-500);
+
+            font-size: 11px;
+        }
+
+
+        /* =====================================
+           FILTERS
+        ===================================== */
+
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+        }
+
+
+        .filter {
+            padding: 9px 13px;
+
+            background: white;
+
+            border: 1px solid var(--border);
+
+            border-radius: 9px;
+
+            color: var(--gray-600);
+
+            font-size: 9px;
+            font-weight: 800;
+
+            cursor: pointer;
+
+            transition: .2s;
+        }
+
+
+        .filter:hover {
+            color: var(--purple);
+            border-color: var(--purple);
+        }
+
+
+        .filter.active {
+            background: var(--black);
+            border-color: var(--black);
+
+            color: white;
+        }
+
+
+        /* =====================================
+           SEARCH
+        ===================================== */
+
+        .search-wrapper {
+            margin-bottom: 28px;
+
+            position: relative;
+        }
+
+
+        .search-wrapper input {
+            width: 100%;
+
+            height: 48px;
+
+            padding: 0 18px 0 43px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 11px;
+
+            outline: none;
+
+            font-size: 11px;
+
+            color: var(--black);
+
+            transition: .2s;
+        }
+
+
+        .search-wrapper input:focus {
+            border-color: var(--purple);
+
+            box-shadow:
+                0 0 0 3px rgba(122,0,255,.08);
+        }
+
+
+        .search-icon {
+            position: absolute;
+
+            left: 16px;
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            color: #999;
+
+            font-size: 15px;
+        }
+
+
+        /* =====================================
+           PROJECT GRID
+        ===================================== */
+
+        .projects-grid {
+            display: grid;
+
+            grid-template-columns: repeat(3,1fr);
+
+            gap: 18px;
+        }
+
+
+        .project-card {
+            background: white;
+
+            border: 1px solid var(--border);
+
+            border-radius: 18px;
+
+            overflow: hidden;
+
+            transition:
+                transform .3s,
+                box-shadow .3s,
+                opacity .25s;
+        }
+
+
+        .project-card:hover {
+            transform: translateY(-7px);
+
+            box-shadow: var(--shadow);
+        }
+
+
+        .project-card.hidden {
+            display: none;
+        }
+
+
+        /* =====================================
+           PROJECT VISUAL
+        ===================================== */
+
+        .project-visual {
+            height: 215px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            background: var(--gray-100);
+        }
+
+
+        .project-visual.dark {
+            background: #161616;
+        }
+
+
+        .project-visual.purple {
+            background: var(--purple);
+        }
+
+
+        .project-visual.gradient {
+            background:
+                linear-gradient(
+                    135deg,
+                    #111111 0%,
+                    #2c1350 50%,
+                    #7A00FF 100%
+                );
+        }
+
+
+        /* Browser */
+
+        .browser {
+            position: absolute;
+
+            left: 9%;
+            top: 18px;
+
+            width: 82%;
+            height: 180px;
+
+            background: white;
+
+            border-radius: 10px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 25px 50px rgba(0,0,0,.16);
+        }
+
+
+        .browser-top {
+            height: 24px;
+
+            background: #f2f2f2;
+
+            display: flex;
+            align-items: center;
+
+            gap: 4px;
+
+            padding-left: 10px;
+        }
+
+
+        .browser-dot {
+            width: 5px;
+            height: 5px;
+
+            border-radius: 50%;
+
+            background: #bbb;
+        }
+
+
+        .browser-body {
+            padding: 17px;
+        }
+
+
+        .fake-logo {
+            width: 68px;
+            height: 7px;
+
+            border-radius: 4px;
+
+            background: var(--black);
+        }
+
+
+        .fake-title {
+            width: 70%;
+            height: 17px;
+
+            margin-top: 21px;
+
+            border-radius: 4px;
+
+            background: var(--purple);
+        }
+
+
+        .fake-text {
+            width: 85%;
+            height: 5px;
+
+            margin-top: 8px;
+
+            border-radius: 4px;
+
+            background: #ddd;
+        }
+
+
+        .fake-cards {
+            display: grid;
+
+            grid-template-columns: repeat(3,1fr);
+
+            gap: 6px;
+
+            margin-top: 20px;
+        }
+
+
+        .fake-card {
+            height: 52px;
+
+            border-radius: 6px;
+
+            background: #f1f1f3;
+        }
+
+
+        /* Map */
+
+        .map {
+            position: absolute;
+
+            left: 8%;
+            top: 18px;
+
+            width: 84%;
+            height: 180px;
+
+            background: white;
+
+            border-radius: 13px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 25px 50px rgba(0,0,0,.13);
+        }
+
+
+        .map-road {
+            position: absolute;
+
+            height: 3px;
+
+            background: #ddd;
+
+            width: 130%;
+        }
+
+
+        .road1 {
+            top: 35%;
+            left: -20%;
+            transform: rotate(24deg);
+        }
+
+
+        .road2 {
+            top: 65%;
+            left: -10%;
+            transform: rotate(-18deg);
+        }
+
+
+        .road3 {
+            top: 20%;
+            left: 5%;
+            transform: rotate(72deg);
+        }
+
+
+        .road4 {
+            top: 80%;
+            left: 15%;
+            transform: rotate(63deg);
+        }
+
+
+        .map-pin {
+            position: absolute;
+
+            width: 15px;
+            height: 15px;
+
+            background: var(--purple);
+
+            border-radius: 50% 50% 50% 0;
+
+            transform: rotate(-45deg);
+        }
+
+
+        .pin1 {
+            left: 28%;
+            top: 33%;
+        }
+
+
+        .pin2 {
+            left: 55%;
+            top: 55%;
+        }
+
+
+        .pin3 {
+            left: 73%;
+            top: 30%;
+        }
+
+
+        .pin4 {
+            left: 42%;
+            top: 72%;
+        }
+
+
+        /* Phone */
+
+        .phone {
+            position: absolute;
+
+            left: 33%;
+            top: 11px;
+
+            width: 34%;
+            height: 195px;
+
+            border: 5px solid #222;
+
+            background: white;
+
+            border-radius: 21px;
+
+            box-shadow:
+                0 25px 45px rgba(0,0,0,.22);
+
+            padding: 19px 11px;
+        }
+
+
+        .phone-header {
+            width: 65%;
+            height: 7px;
+
+            background: var(--purple);
+
+            border-radius: 4px;
+        }
+
+
+        .phone-big {
+            width: 100%;
+            height: 48px;
+
+            margin-top: 20px;
+
+            background: var(--purple-light);
+
+            border-radius: 9px;
+        }
+
+
+        .phone-line {
+            width: 100%;
+            height: 20px;
+
+            margin-top: 8px;
+
+            background: #f1f1f3;
+
+            border-radius: 6px;
+        }
+
+
+        /* Dashboard */
+
+        .dashboard {
+            position: absolute;
+
+            left: 8%;
+            top: 24px;
+
+            width: 84%;
+            height: 166px;
+
+            background: white;
+
+            border-radius: 10px;
+
+            box-shadow:
+                0 25px 45px rgba(0,0,0,.2);
+
+            padding: 17px;
+        }
+
+
+        .dashboard-title {
+            width: 100px;
+            height: 8px;
+
+            border-radius: 4px;
+
+            background: var(--black);
+        }
+
+
+        .chart {
+            height: 95px;
+
+            margin-top: 20px;
+
+            display: flex;
+            align-items: end;
+
+            gap: 7px;
+        }
+
+
+        .chart-bar {
+            flex: 1;
+
+            border-radius: 4px 4px 0 0;
+
+            background: var(--purple);
+        }
+
+
+        .chart-bar:nth-child(1) {
+            height: 35%;
+        }
+
+
+        .chart-bar:nth-child(2) {
+            height: 55%;
+        }
+
+
+        .chart-bar:nth-child(3) {
+            height: 45%;
+        }
+
+
+        .chart-bar:nth-child(4) {
+            height: 70%;
+        }
+
+
+        .chart-bar:nth-child(5) {
+            height: 60%;
+        }
+
+
+        .chart-bar:nth-child(6) {
+            height: 90%;
+        }
+
+
+        /* Code */
+
+        .code {
+            position: absolute;
+
+            left: 8%;
+            top: 27px;
+
+            width: 84%;
+            height: 160px;
+
+            padding: 22px;
+
+            background: #181818;
+
+            border-radius: 10px;
+
+            box-shadow:
+                0 25px 45px rgba(0,0,0,.25);
+        }
+
+
+        .code-line {
+            height: 5px;
+
+            margin-bottom: 11px;
+
+            background: #555;
+
+            border-radius: 3px;
+        }
+
+
+        .code-line:nth-child(1) {
+            width: 50%;
+            background: var(--purple);
+        }
+
+
+        .code-line:nth-child(2) {
+            width: 80%;
+        }
+
+
+        .code-line:nth-child(3) {
+            width: 60%;
+        }
+
+
+        .code-line:nth-child(4) {
+            width: 87%;
+        }
+
+
+        .code-line:nth-child(5) {
+            width: 43%;
+        }
+
+
+        .code-line:nth-child(6) {
+            width: 70%;
+        }
+
+
+        /* =====================================
+           PROJECT CONTENT
+        ===================================== */
+
+        .project-content {
+            padding: 23px;
+        }
+
+
+        .project-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 10px;
+        }
+
+
+        .category {
+            color: var(--purple);
+
+            font-size: 8px;
+            font-weight: 900;
+
+            letter-spacing: .8px;
+
+            text-transform: uppercase;
+        }
+
+
+        .badge {
+            padding: 5px 8px;
+
+            border-radius: 100px;
+
+            background: var(--purple-light);
+
+            color: var(--purple);
+
+            font-size: 7px;
+            font-weight: 900;
+        }
+
+
+        .badge.real {
+            background: #e7fff5;
+            color: var(--green);
+        }
+
+
+        .project-title {
+            margin-top: 11px;
+
+            font-size: 19px;
+
+            letter-spacing: -.7px;
+        }
+
+
+        .project-description {
+            margin-top: 8px;
+
+            color: var(--gray-600);
+
+            font-size: 10.5px;
+
+            line-height: 1.7;
+        }
+
+
+        .project-bottom {
+            margin-top: 18px;
+
+            padding-top: 15px;
+
+            border-top: 1px solid var(--border);
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 10px;
+        }
+
+
+        .tech {
+            color: #999;
+
+            font-size: 8px;
+        }
+
+
+        .view-project {
+            border: none;
+            background: none;
+
+            color: var(--purple);
+
+            font-size: 9px;
+            font-weight: 900;
+
+            cursor: pointer;
+        }
+
+
+        .view-project:hover {
+            text-decoration: underline;
+        }
+
+
+        /* =====================================
+           EMPTY
+        ===================================== */
+
+        .empty {
+            display: none;
+
+            padding: 60px 20px;
+
+            text-align: center;
+
+            color: var(--gray-500);
+        }
+
+
+        .empty.visible {
+            display: block;
+        }
+
+
+        .empty strong {
+            display: block;
+
+            color: var(--black);
+
+            font-size: 17px;
+        }
+
+
+        .empty span {
+            display: block;
+
+            margin-top: 7px;
+
+            font-size: 10px;
+        }
+
+
+        /* =====================================
+           CTA
+        ===================================== */
+
+        .cta {
+            padding-bottom: 110px;
+        }
+
+
+        .cta-box {
+            position: relative;
+
+            overflow: hidden;
+
+            padding: 65px;
+
+            border-radius: 25px;
+
+            background: var(--black);
+
+            color: white;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 40px;
+        }
+
+
+        .cta-box::after {
+            content: "";
+
+            position: absolute;
+
+            width: 450px;
+            height: 450px;
+
+            right: -180px;
+            top: -230px;
+
+            border-radius: 50%;
+
+            background: var(--purple);
+
+            opacity: .5;
+
+            filter: blur(60px);
+        }
+
+
+        .cta-content {
+            position: relative;
+
+            z-index: 1;
+        }
+
+
+        .cta-label {
+            color: #aa70ff;
+
+            font-size: 9px;
+            font-weight: 900;
+
+            letter-spacing: .8px;
+
+            text-transform: uppercase;
+        }
+
+
+        .cta h2 {
+            max-width: 650px;
+
+            margin-top: 12px;
+
+            font-size: clamp(31px,4vw,47px);
+
+            line-height: 1.05;
+
+            letter-spacing: -2px;
+        }
+
+
+        .cta p {
+            margin-top: 13px;
+
+            color: #aaa;
+
+            font-size: 12px;
+        }
+
+
+        .cta-button {
+            position: relative;
+            z-index: 2;
+
+            flex-shrink: 0;
+
+            padding: 15px 20px;
+
+            background: white;
+
+            color: var(--black);
+
+            border-radius: 10px;
+
+            font-size: 10px;
+            font-weight: 900;
+
+            transition: .2s;
+        }
+
+
+        .cta-button:hover {
+            background: var(--purple);
+
+            color: white;
+        }
+
+
+        /* =====================================
+           FOOTER
+        ===================================== */
+
+        footer {
+            border-top: 1px solid var(--border);
+
+            padding: 35px 0;
+        }
+
+
+        .footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 20px;
+        }
+
+
+        .footer-logo {
+            font-size: 17px;
+            font-weight: 900;
+        }
+
 
         .footer-logo span {
             color: var(--purple);
         }
 
-        .footer-brand p {
-            margin-top: 14px;
-            color: #888;
-            font-size: 13px;
-            line-height: 1.7;
+
+        .footer p {
+            color: #999;
+            font-size: 8px;
         }
 
-        .footer-links {
+
+        /* =====================================
+           MODAL
+        ===================================== */
+
+        .modal {
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 2000;
+
+            display: none;
+
+            align-items: center;
+            justify-content: center;
+
+            padding: 20px;
+
+            background: rgba(0,0,0,.68);
+
+            backdrop-filter: blur(8px);
+        }
+
+
+        .modal.active {
             display: flex;
-            gap: 80px;
         }
 
-        .footer-column h4 {
-            font-size: 13px;
-            margin-bottom: 17px;
+
+        .modal-box {
+            width: min(650px,100%);
+
+            max-height: 90vh;
+
+            overflow-y: auto;
+
+            background: white;
+
+            border-radius: 20px;
+
+            padding: 35px;
+
+            position: relative;
+
+            animation: modalIn .25s ease;
         }
 
-        .footer-column a {
+
+        @keyframes modalIn {
+
+            from {
+                opacity: 0;
+                transform: translateY(18px) scale(.98);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+
+        }
+
+
+        .modal-close {
+            position: absolute;
+
+            top: 17px;
+            right: 17px;
+
+            width: 34px;
+            height: 34px;
+
+            border: none;
+
+            border-radius: 50%;
+
+            background: var(--gray-100);
+
+            cursor: pointer;
+
+            font-size: 18px;
+        }
+
+
+        .modal-category {
+            color: var(--purple);
+
+            font-size: 9px;
+            font-weight: 900;
+
+            text-transform: uppercase;
+
+            letter-spacing: .8px;
+        }
+
+
+        .modal-title {
+            margin-top: 9px;
+
+            font-size: 32px;
+
+            letter-spacing: -1.5px;
+        }
+
+
+        .modal-description {
+            margin-top: 15px;
+
+            color: var(--gray-600);
+
+            font-size: 12px;
+
+            line-height: 1.8;
+        }
+
+
+        .modal-grid {
+            display: grid;
+
+            grid-template-columns: repeat(2,1fr);
+
+            gap: 10px;
+
+            margin-top: 25px;
+        }
+
+
+        .modal-item {
+            padding: 15px;
+
+            background: var(--gray-100);
+
+            border-radius: 10px;
+        }
+
+
+        .modal-item small {
             display: block;
-            color: #888;
-            font-size: 13px;
-            margin-bottom: 11px;
-            transition: .2s;
+
+            color: #999;
+
+            font-size: 7px;
+
+            font-weight: 900;
+
+            text-transform: uppercase;
         }
 
-        .footer-column a:hover {
-            color: white;
+
+        .modal-item strong {
+            display: block;
+
+            margin-top: 5px;
+
+            font-size: 10px;
         }
 
-        .footer-bottom {
-            padding-top: 25px;
 
-            display: flex;
-            justify-content: space-between;
-
-            color: #666;
-            font-size: 11px;
-        }
-
-        /* =========================
+        /* =====================================
            RESPONSIVE
-        ========================= */
+        ===================================== */
 
-        @media (max-width: 900px) {
+        @media(max-width: 950px) {
 
-            .nav-links {
-                position: absolute;
+            .projects-grid {
+                grid-template-columns: repeat(2,1fr);
+            }
 
-                top: 76px;
-                left: 4%;
-                width: 92%;
 
-                background: white;
+            .section-header {
+                align-items: start;
 
-                padding: 25px;
-
-                border: 1px solid var(--border);
-                border-radius: 15px;
-
-                display: none;
                 flex-direction: column;
-                align-items: flex-start;
-
-                box-shadow: 0 20px 50px rgba(0,0,0,.1);
             }
 
-            .nav-links.active {
-                display: flex;
-            }
-
-            .menu-btn {
-                display: block;
-            }
-
-            .hero-container {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-visual {
-                min-height: 440px;
-            }
-
-            .main-card {
-                right: 5%;
-            }
-
-            .marketing-container {
-                grid-template-columns: 1fr;
-            }
-
-            .product-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .services-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
 
             .cta-box {
                 flex-direction: column;
-                align-items: flex-start;
-            }
 
-            .footer-top {
-                flex-direction: column;
+                align-items: flex-start;
+
+                padding: 45px 35px;
             }
 
         }
 
-        @media (max-width: 600px) {
+
+        @media(max-width: 700px) {
+
+            .nav-links a:not(.nav-cta) {
+                display: none;
+            }
+
 
             .hero {
-                padding-top: 125px;
+                padding-top: 135px;
             }
+
 
             .hero h1 {
-                font-size: 46px;
-                letter-spacing: -2.5px;
+                font-size: 48px;
+
+                letter-spacing: -3px;
             }
 
-            .hero-description {
-                font-size: 15px;
+
+            .hero-bottom {
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                gap: 15px;
             }
 
-            .hero-visual {
-                min-height: 390px;
+
+            .numbers-grid {
+                grid-template-columns: repeat(2,1fr);
             }
 
-            .main-card {
-                width: 90%;
-                height: 360px;
-                right: 0;
-            }
 
-            .floating-card {
-                left: 0;
-                bottom: 0;
-            }
-
-            .dashboard-number {
-                font-size: 38px;
-            }
-
-            .stats-container {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 25px 0;
-            }
-
-            .stat:nth-child(2) {
+            .number-item:nth-child(2) {
                 border-right: none;
             }
 
-            .stat:nth-child(3),
-            .stat:nth-child(4) {
+
+            .number-item:nth-child(3),
+            .number-item:nth-child(4) {
                 border-top: 1px solid var(--border);
-                padding-top: 20px;
             }
 
-            section {
-                padding: 80px 0;
-            }
 
-            .services-grid,
-            .product-grid,
-            .process-grid {
+            .projects-grid {
                 grid-template-columns: 1fr;
             }
 
-            .marketing-container {
-                gap: 45px;
+
+            .modal-grid {
+                grid-template-columns: 1fr;
             }
 
-            .marketing-panel {
-                min-height: 370px;
+
+            .footer {
+                flex-direction: column;
+
+                align-items: flex-start;
             }
+
+        }
+
+
+        @media(max-width: 450px) {
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
 
             .cta-box {
-                padding: 45px 30px;
+                padding: 38px 25px;
             }
 
-            .footer-links {
-                gap: 40px;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                gap: 10px;
-            }
         }
 
     </style>
 </head>
 
+
 <body>
 
-<!-- =========================
+
+<!-- =====================================
      NAVBAR
-========================= -->
+===================================== -->
 
 <header class="navbar">
 
-    <div class="nav-container">
+    <div class="container nav-inner">
 
-        <a href="#" class="logo">
+        <a href="../" class="logo">
             ALFA<span>.</span>
         </a>
 
-        <button class="menu-btn" id="menuBtn">
-            ☰
-        </button>
 
-        <ul class="nav-links" id="navLinks">
+        <nav class="nav-links">
 
-            <li>
-                <a href="#servicios">Servicios</a>
-            </li>
+            <a href="../">
+                Inicio
+            </a>
 
-            <li>
-                <a href="#marketing">Marketing</a>
-            </li>
+            <a href="#portfolio">
+                Portfolio
+            </a>
 
-            <li>
-                <a href="#productos">Productos</a>
-            </li>
+            <a href="#contacto" class="nav-cta">
+                Contactar
+            </a>
 
-            <li>
-                <a href="#proceso">Cómo trabajamos</a>
-            </li>
-
-            <li>
-                <a href="#contacto" class="nav-button">
-                    Contactar
-                </a>
-            </li>
-
-        </ul>
+        </nav>
 
     </div>
 
 </header>
 
 
-<!-- =========================
+<!-- =====================================
      HERO
-========================= -->
+===================================== -->
 
 <section class="hero">
 
-    <div class="hero-container">
+    <div class="container hero-content">
 
-        <div class="hero-content">
+        <div class="eyebrow">
 
-            <div class="hero-badge">
-                <span class="badge-dot"></span>
-                Soluciones para negocios
-            </div>
+            <span class="eyebrow-dot"></span>
 
-            <h1>
-                Tu negocio.
-                <span>Más ALFA.</span>
-            </h1>
-
-            <p class="hero-description">
-                Tecnología, marketing y soluciones digitales para hacer
-                crecer tu negocio. Productos electrónicos, desarrollo web,
-                aplicaciones, marketing práctico y mucho más.
-            </p>
-
-            <div class="hero-buttons">
-
-                <a href="#servicios" class="btn btn-primary">
-                    Explorar servicios
-                    →
-                </a>
-
-                <a href="#contacto" class="btn btn-secondary">
-                    Hablar con ALFA
-                </a>
-
-            </div>
+            Portfolio ALFA NEGOCIOS
 
         </div>
 
 
-        <!-- VISUAL -->
+        <h1>
 
-        <div class="hero-visual">
+            Lo que hacemos
 
-            <div class="visual-card main-card">
+            <span>
+                realidad.
+            </span>
 
-                <div class="card-top">
+        </h1>
 
-                    <div class="mini-logo">
-                        ALFA<span>.</span>
-                    </div>
 
-                    <div class="circle-icon">
-                        ↗
-                    </div>
+        <p class="hero-description">
 
+            Una selección de soluciones digitales, aplicaciones,
+            herramientas y estrategias creadas para resolver
+            problemas reales de negocios.
+
+        </p>
+
+
+        <div class="hero-bottom">
+
+            <a href="#portfolio" class="hero-button">
+                Explorar portfolio →
+            </a>
+
+
+            <span class="hero-note">
+
+                Web · Apps · Software · Marketing · Tecnología
+
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     NUMBERS
+===================================== -->
+
+<section class="numbers">
+
+    <div class="container">
+
+        <div class="numbers-grid">
+
+            <div class="number-item">
+
+                <div class="number">
+                    10+
                 </div>
 
-                <div class="dashboard-title">
-                    CRECIMIENTO DEL NEGOCIO
-                </div>
-
-                <div class="dashboard-number">
-                    +84.7%
-                </div>
-
-                <div class="chart">
-
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-
+                <div class="number-label">
+                    Proyectos de muestra
                 </div>
 
             </div>
 
 
-            <div class="visual-card floating-card">
+            <div class="number-item">
 
-                <p>
-                    RESULTADOS
-                </p>
+                <div class="number">
+                    5
+                </div>
 
-                <strong>
-                    Más clientes
-                </strong>
+                <div class="number-label">
+                    Áreas de trabajo
+                </div>
 
-                <div class="success">
-                    ↑ Crecimiento
+            </div>
+
+
+            <div class="number-item">
+
+                <div class="number">
+                    Web
+                </div>
+
+                <div class="number-label">
+                    Soluciones digitales
+                </div>
+
+            </div>
+
+
+            <div class="number-item">
+
+                <div class="number">
+                    ALFA
+                </div>
+
+                <div class="number-label">
+                    Tecnología + estrategia
                 </div>
 
             </div>
@@ -1292,539 +1730,1025 @@
 </section>
 
 
-<!-- =========================
-     STATS
-========================= -->
+<!-- =====================================
+     PORTFOLIO
+===================================== -->
 
-<section class="stats">
+<section class="portfolio" id="portfolio">
 
-    <div class="stats-container">
+    <div class="container">
 
-        <div class="stat">
-            <strong>360°</strong>
-            <p>Soluciones digitales</p>
-        </div>
-
-        <div class="stat">
-            <strong>100%</strong>
-            <p>Enfoque práctico</p>
-        </div>
-
-        <div class="stat">
-            <strong>24/7</strong>
-            <p>Soluciones digitales</p>
-        </div>
-
-        <div class="stat">
-            <strong>ALFA</strong>
-            <p>Para hacer crecer tu negocio</p>
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     SERVICES
-========================= -->
-
-<section class="services" id="servicios">
-
-    <div class="section-container">
 
         <div class="section-header">
 
-            <div class="section-label">
-                Lo que hacemos
-            </div>
-
-            <h2>
-                Una empresa.
-                Muchas soluciones.
-            </h2>
-
-            <p>
-                Desde el hardware que necesitas hasta la estrategia digital
-                que hará crecer tu negocio.
-            </p>
-
-        </div>
-
-
-        <div class="services-grid">
-
-
-            <div class="service-card">
-
-                <div class="service-icon">
-                    ⚡
-                </div>
-
-                <h3>
-                    Productos electrónicos
-                </h3>
-
-                <p>
-                    Tecnología y productos electrónicos para uso personal,
-                    profesional y empresarial.
-                </p>
-
-                <a href="#contacto" class="service-link">
-                    Ver productos →
-                </a>
-
-            </div>
-
-
-            <div class="service-card">
-
-                <div class="service-icon">
-                    ◈
-                </div>
-
-                <h3>
-                    Desarrollo web
-                </h3>
-
-                <p>
-                    Creamos páginas web y soluciones digitales pensadas
-                    para que tu empresa venda, comunique y crezca.
-                </p>
-
-                <a href="#contacto" class="service-link">
-                    Crear mi web →
-                </a>
-
-            </div>
-
-
-            <div class="service-card">
-
-                <div class="service-icon">
-                    ◎
-                </div>
-
-                <h3>
-                    Desarrollo de apps
-                </h3>
-
-                <p>
-                    Aplicaciones móviles y herramientas digitales
-                    adaptadas a las necesidades reales de tu negocio.
-                </p>
-
-                <a href="#contacto" class="service-link">
-                    Desarrollar una app →
-                </a>
-
-            </div>
-
-
-            <div class="service-card">
-
-                <div class="service-icon">
-                    $
-                </div>
-
-                <h3>
-                    Soluciones financieras
-                </h3>
-
-                <p>
-                    Herramientas y soluciones orientadas a facilitar
-                    la gestión financiera de negocios.
-                </p>
-
-                <a href="#contacto" class="service-link">
-                    Conocer soluciones →
-                </a>
-
-            </div>
-
-
-            <div class="service-card">
-
-                <div class="service-icon">
-                    ◫
-                </div>
-
-                <h3>
-                    Piezas de PC
-                </h3>
-
-                <p>
-                    Componentes y piezas para actualizar, reparar o
-                    construir tu PC.
-                </p>
-
-                <a href="#contacto" class="service-link">
-                    Buscar componente →
-                </a>
-
-            </div>
-
-
-            <div class="service-card">
-
-                <div class="service-icon">
-                    ⚙
-                </div>
-
-                <h3>
-                    Sistemas operativos
-                </h3>
-
-                <p>
-                    Instalación y configuración de sistemas operativos,
-                    software y equipos.
-                </p>
-
-                <a href="#contacto" class="service-link">
-                    Solicitar instalación →
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     MARKETING
-========================= -->
-
-<section class="marketing" id="marketing">
-
-    <div class="section-container marketing-container">
-
-
-        <div>
-
-            <div class="section-label">
-                Marketing práctico
-            </div>
-
-            <h2>
-                No publiques
-                por publicar.
-                <span>Vende.</span>
-            </h2>
-
-            <p class="marketing-description">
-                Diseñamos estrategias digitales adaptadas a la realidad
-                de Cuba. Porque tener seguidores está bien, pero convertirlos
-                en clientes es bastante más interesante.
-            </p>
-
-
-            <div class="marketing-list">
-
-                <div>
-                    <span class="check">✓</span>
-                    Estrategias adaptadas al mercado cubano
-                </div>
-
-                <div>
-                    <span class="check">✓</span>
-                    Contenido pensado para vender
-                </div>
-
-                <div>
-                    <span class="check">✓</span>
-                    Optimización de redes sociales
-                </div>
-
-                <div>
-                    <span class="check">✓</span>
-                    Embudos para convertir seguidores en clientes
-                </div>
-
-            </div>
-
-            <div style="margin-top:30px;">
-
-                <a href="#contacto" class="btn btn-primary">
-                    Potenciar mi negocio →
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <div class="marketing-panel">
-
-            <div class="social-header">
-
-                <div class="social-title">
-                    ALFA Marketing
-                </div>
-
-                <div class="social-status">
-                    ● ACTIVO
-                </div>
-
-            </div>
-
-
-            <div class="followers">
-
-                <small>
-                    ALCANCE DIGITAL
-                </small>
-
-                <strong>
-                    +128K
-                </strong>
-
-                <div class="growth">
-                    ↑ +32.4% este mes
-                </div>
-
-            </div>
-
-
-            <div class="fake-chart">
-
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     PRODUCTS
-========================= -->
-
-<section class="products" id="productos">
-
-    <div class="section-container">
-
-        <div class="section-header">
-
-            <div class="section-label">
-                Tecnología
-            </div>
-
-            <h2>
-                El hardware que necesitas.
-            </h2>
-
-            <p>
-                Desde componentes para PC hasta productos electrónicos
-                para tu día a día.
-            </p>
-
-        </div>
-
-
-        <div class="product-grid">
-
-            <div class="product">
-
-                <div class="product-number">
-                    01
-                </div>
-
-                <h3>
-                    Componentes PC
-                </h3>
-
-                <p>
-                    Procesadores, tarjetas gráficas, memorias,
-                    almacenamiento y más.
-                </p>
-
-            </div>
-
-
-            <div class="product">
-
-                <div class="product-number">
-                    02
-                </div>
-
-                <h3>
-                    Periféricos
-                </h3>
-
-                <p>
-                    Teclados, ratones, auriculares, monitores
-                    y accesorios.
-                </p>
-
-            </div>
-
-
-            <div class="product">
-
-                <div class="product-number">
-                    03
-                </div>
-
-                <h3>
-                    Electrónica
-                </h3>
-
-                <p>
-                    Productos tecnológicos seleccionados para
-                    diferentes necesidades.
-                </p>
-
-            </div>
-
-
-            <div class="product">
-
-                <div class="product-number">
-                    04
-                </div>
-
-                <h3>
-                    Software
-                </h3>
-
-                <p>
-                    Instalación, configuración y puesta a punto
-                    de tus equipos.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     PROCESS
-========================= -->
-
-<section id="proceso">
-
-    <div class="section-container">
-
-        <div class="section-header">
-
-            <div class="section-label">
-                Cómo trabajamos
-            </div>
-
-            <h2>
-                Simple. Directo.
-                Sin complicaciones.
-            </h2>
-
-        </div>
-
-
-        <div class="process-grid">
-
-            <div class="process">
-
-                <div class="process-number">
-                    01 / ANALIZAMOS
-                </div>
-
-                <h3>
-                    Entendemos tu necesidad
-                </h3>
-
-                <p>
-                    Primero conocemos tu negocio, problema o proyecto
-                    antes de recomendarte cualquier solución.
-                </p>
-
-            </div>
-
-
-            <div class="process">
-
-                <div class="process-number">
-                    02 / CREAMOS
-                </div>
-
-                <h3>
-                    Diseñamos la solución
-                </h3>
-
-                <p>
-                    Combinamos tecnología, estrategia y creatividad
-                    para construir algo que realmente puedas utilizar.
-                </p>
-
-            </div>
-
-
-            <div class="process">
-
-                <div class="process-number">
-                    03 / CRECEMOS
-                </div>
-
-                <h3>
-                    Lo llevamos al siguiente nivel
-                </h3>
-
-                <p>
-                    Medimos, mejoramos y adaptamos la solución para
-                    que siga funcionando mientras tu negocio crece.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     CTA
-========================= -->
-
-<section class="cta" id="contacto">
-
-    <div class="section-container">
-
-        <div class="cta-box">
-
-            <div>
+            <div class="section-title">
 
                 <h2>
-                    Hagamos que tu negocio sea más ALFA.
+                    Portfolio
                 </h2>
 
                 <p>
-                    Cuéntanos qué necesitas y encontremos juntos
-                    la solución.
+                    Explora nuestras ideas, soluciones y desarrollos.
                 </p>
 
             </div>
 
 
-            <a href="https://wa.me/51361974" class="btn btn-secondary">
-                Contactar por WhatsApp
-                →
+            <div class="filters">
+
+                <button class="filter active" data-filter="all">
+                    Todos
+                </button>
+
+                <button class="filter" data-filter="web">
+                    Web
+                </button>
+
+                <button class="filter" data-filter="app">
+                    Apps
+                </button>
+
+                <button class="filter" data-filter="software">
+                    Software
+                </button>
+
+                <button class="filter" data-filter="marketing">
+                    Marketing
+                </button>
+
+                <button class="filter" data-filter="fintech">
+                    Fintech
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- SEARCH -->
+
+        <div class="search-wrapper">
+
+            <span class="search-icon">
+                ⌕
+            </span>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Buscar proyectos..."
+            >
+
+        </div>
+
+
+        <!-- PROJECTS -->
+
+        <div class="projects-grid" id="projectsGrid">
+
+
+            <!-- 01 -->
+
+            <article
+                class="project-card"
+                data-category="app"
+                data-search="transfermap cuba pagos digitales mapa negocios aplicacion"
+            >
+
+                <div class="project-visual">
+
+                    <div class="map">
+
+                        <div class="map-road road1"></div>
+                        <div class="map-road road2"></div>
+                        <div class="map-road road3"></div>
+                        <div class="map-road road4"></div>
+
+                        <div class="map-pin pin1"></div>
+                        <div class="map-pin pin2"></div>
+                        <div class="map-pin pin3"></div>
+                        <div class="map-pin pin4"></div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="project-content">
+
+                    <div class="project-top">
+
+                        <span class="category">
+                            Aplicación
+                        </span>
+
+                        <span class="badge">
+                            Concepto
+                        </span>
+
+                    </div>
+
+
+                    <h3 class="project-title">
+                        TransferMap Cuba
+                    </h3>
+
+
+                    <p class="project-description">
+
+                        Aplicación para encontrar negocios que
+                        aceptan pagos digitales, con mapas,
+                        búsqueda y catálogos.
+
+                    </p>
+
+
+                    <div class="project-bottom">
+
+                        <span class="tech">
+                            Flutter · Maps · Mobile
+                        </span>
+
+                        <button
+                            class="view-project"
+                            data-project="transfermap"
+                        >
+                            Ver detalle →
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- 02 -->
+
+            <article
+                class="project-card"
+                data-category="web"
+                data-search="mapa habana mapa negocios establecimientos cuba"
+            >
+
+                <div class="project-visual">
+
+                    <div class="map">
+
+                        <div class="map-road road1"></div>
+                        <div class="map-road road2"></div>
+                        <div class="map-road road3"></div>
+                        <div class="map-road road4"></div>
+
+                        <div class="map-pin pin1"></div>
+                        <div class="map-pin pin2"></div>
+                        <div class="map-pin pin3"></div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="project-content">
+
+                    <div class="project-top">
+
+                        <span class="category">
+                            Web
+                        </span>
+
+                        <span class="badge">
+                            Demo
+                        </span>
+
+                    </div>
+
+
+                    <h3 class="project-title">
+                        Mapa Habana
+                    </h3>
+
+
+                    <p class="project-description">
+
+                        Mapa web interactivo para visualizar negocios
+                        y establecimientos mediante puntos dinámicos.
+
+                    </p>
+
+
+                    <div class="project-bottom">
+
+                        <span class="tech">
+                            HTML · CSS · JavaScript
+                        </span>
+
+                        <button
+                            class="view-project"
+                            data-project="mapa"
+                        >
+                            Ver detalle →
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- 03 -->
+
+            <article
+                class="project-card"
+                data-category="web"
+                data-search="landing alfa negocios web empresa corporativa"
+            >
+
+                <div class="project-visual">
+
+                    <div class="browser">
+
+                        <div class="browser-top">
+
+                            <span class="browser-dot"></span>
+                            <span class="browser-dot"></span>
+                            <span class="browser-dot"></span>
+
+                        </div>
+
+
+                        <div class="browser-body">
+
+                            <div class="fake-logo"></div>
+
+                            <div class="fake-title"></div>
+
+                            <div class="fake-text"></div>
+
+                            <div class="fake-cards">
+
+                                <div class="fake-card"></div>
+                                <div class="fake-card"></div>
+                                <div class="fake-card"></div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="project-content">
+
+                    <div class="project-top">
+
+                        <span class="category">
+                            Web
+                        </span>
+
+                        <span class="badge">
+                            Interno
+                        </span>
+
+                    </div>
+
+
+                    <h3 class="project-title">
+                        ALFA NEGOCIOS
+                    </h3>
+
+
+                    <p class="project-description">
+
+                        Landing corporativa para presentar servicios
+                        tecnológicos, financieros y de marketing.
+
+                    </p>
+
+
+                    <div class="project-bottom">
+
+                        <span class="tech">
+                            HTML · CSS · JavaScript
+                        </span>
+
+                        <button
+                            class="view-project"
+                            data-project="alfa"
+                        >
+                            Ver detalle →
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- 04 -->
+
+            <article
+                class="project-card"
+                data-category="software"
+                data-search="fintrack finanzas ventas inventario sistema financiero"
+            >
+
+                <div class="project-visual purple">
+
+                    <div class="dashboard">
+
+                        <div class="dashboard-title"></div>
+
+                        <div class="chart">
+
+                            <div class="chart-bar"></div>
+                            <div class="chart-bar"></div>
+                            <div class="chart-bar"></div>
+                            <div class="chart-bar"></div>
+                            <div class="chart-bar"></div>
+                            <div class="chart-bar"></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="project-content">
+
+                    <div class="project-top">
+
+                        <span class="category">
+                            Software
+                        </span>
+
+                        <span class="badge">
+                            Concepto
+                        </span>
+
+                    </div>
+
+
+                    <h3 class="project-title">
+                        FinTrack
+                    </h3>
+
+
+                    <p class="project-description">
+
+                        Sistema de gestión financiera para controlar
+                        ingresos, gastos, ventas e inventario.
+
+                    </p>
+
+
+                    <div class="project-bottom">
+
+                        <span class="tech">
+                            JavaScript · LocalStorage
+                        </span>
+
+                        <button
+                            class="view-project"
+                            data-project="fintrack"
+                        >
+                            Ver detalle →
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- 05 -->
+
+            <article
+                class="project-card"
+                data-category="software"
+                data-search="inventario django piezas vehiculos compradores gestion"
+            >
+
+                <div class="project-visual dark">
+
+                    <div class="dashboard">
+
+                        <div class="dashboard-title"></div>
+
+                        <div
+                            style="
+                            display:grid;
+                            grid-template-columns:repeat(3,1fr);
+                            gap:7px;
+                            margin-top:24px;
+                            "
+                        >
+
+                            <div style="
+                                height:52px;
+                                background:#eee;
+                                border-radius:6px;
+                            "></div>
+
+                            <div style="
+                                height:52px;
+                                background:#eee;
+                                border-radius:6px;
+                            "></div>
+
+                            <div style="
+                                height:52px;
+                                background:#eee;
+                                border-radius:6px;
+                            "></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="project-content">
+
+                    <div class="project-top">
+
+                        <span class="category">
+                            Software
+                        </span>
+
+                        <span class="badge">
+                            Concepto
+                        </span>
+
+                    </div>
+
+
+                    <h3 class="project-title">
+                        Sistema de Inventario
+                    </h3>
+
+
+                    <p class="project-description">
+
+                        Plataforma para controlar productos, piezas,
+                        compradores, vehículos y operaciones comerciales.
+
+                    </p>
+
+
+                    <div class="project-bottom">
+
+                        <span class="tech">
+                            Django · Python · Tailwind
+                        </span>
+
+                        <button
+                            class="view-project"
+                            data-project="inventario"
+                        >
+                            Ver detalle →
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- 06 -->
+
+            <article
+                class="project-card"
+                data-category="marketing"
+                data-search="marketing digital cuba redes sociales estrategia clientes"
+            >
+
+                <div class="project-visual gradient">
+
+                    <div class="dashboard">
+
+                        <div class="dashboard-title"></div>
+
+                        <div class="chart">
+
+                            <div
+                                class="chart-bar"
+                                style="height:30%"
+                            ></div>
+
+                            <div
+                                class="chart-bar"
+                                style="height:45%"
+                            ></div>
+
+                            <div
+                                class="chart-bar"
+                                style="height:52%"
+                            ></div>
+
+                            <div
+                                class="chart-bar"
+                                style="height:65%"
+                            ></div>
+
+                            <div
+                                class="chart-bar"
+                                style="height:82%"
+                            ></div>
+
+                            <div
+                                class="chart-bar"
+                                style="height:94%"
+                            ></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="project-content">
+
+                    <div class="project-top">
+
+                        <span class="category">
+                            Marketing
+                        </span>
+
+                        <span class="badge">
+                            Servicio
+                        </span>
+
+                    </div>
+
+
+                    <h3 class="project-title">
+                        Marketing Práctico
+                    </h3>
+
+
+                    <p class="project-description">
+
+                        Estrategias digitales adaptadas a Cuba para
+                        transformar redes sociales en canales de venta.
+
+                    </p>
+
+
+                    <div class="project-bottom">
+
+                        <span class="tech">
+                            Strategy · Content · Social
+                        </span>
+
+                        <button
+                            class="view-project"
+                            data-project="marketing"
+                        >
+                            Ver detalle →
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- 07 -->
+
+            <article
+                class="project-card"
+                data-category="app"
+                data-search="telegram bot ventas automatizacion productos clientes"
+            >
+
+                <div class="project-visual purple">
+
+                    <div class="phone">
+
+                        <div class="phone-header"></div>
+
+                        <div class="phone-big"></div>
+
+                        <div class="phone-line"></div>
+                        <div class="phone-line"></div>
+                        <div class="phone-line"></div>
+                        <div class="phone-line"></div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="project-content">
+
+                    <div class="project-top">
+
+                        <span class="category">
+                            Automatización
+                        </span>
+
+                        <span class="badge">
+                            Concepto
+                        </span>
+
+                    </div>
+
+
+                    <h3 class="project-title">
+                        Bot de Ventas
+                    </h3>
+
+
+                    <p class="project-description">
+
+                        Automatización de ventas mediante Telegram,
+                        selección de productos y registro de operaciones.
+
+                    </p>
+
+
+                    <div class="project-bottom">
+
+                        <span class="tech">
+                            Python · Telegram
+                        </span>
+
+                        <button
+                            class="view-project"
+                            data-project="bot"
+                        >
+                            Ver detalle →
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- 08 -->
+
+            <article
+                class="project-card"
+                data-category="web"
+                data-search="catalogo digital productos precios tienda ecommerce"
+            >
+
+                <div class="project-visual">
+
+                    <div class="browser">
+
+                        <div class="browser-top">
+
+                            <span class="browser-dot"></span>
+                            <span class="browser-dot"></span>
+                            <span class="browser-dot"></span>
+
+                        </div>
+
+
+                        <div class="browser-body">
+
+                            <div class="fake-logo"></div>
+
+                            <div
+                                style="
+                                margin-top:19px;
+                                display:grid;
+                                grid-template-columns:repeat(2,1fr);
+                                gap:8px;
+                                "
+                            >
+
+                                <div class="fake-card"></div>
+                                <div class="fake-card"></div>
+                                <div class="fake-card"></div>
+                                <div class="fake-card"></div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="project-content">
+
+                    <div class="project-top">
+
+                        <span class="category">
+                            Web
+                        </span>
+
+                        <span class="badge">
+                            Concepto
+                        </span>
+
+                    </div>
+
+
+                    <h3 class="project-title">
+                        Catálogo Digital
+                    </h3>
+
+
+                    <p class="project-description">
+
+                        Catálogos web para negocios que necesitan
+                        mostrar productos, precios y disponibilidad.
+
+                    </p>
+
+
+                    <div class="project-bottom">
+
+                        <span class="tech">
+                            HTML · CSS · JavaScript
+                        </span>
+
+                        <button
+                            class="view-project"
+                            data-project="catalogo"
+                        >
+                            Ver detalle →
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- 09 -->
+
+            <article
+                class="project-card"
+                data-category="fintech"
+                data-search="p2p cuba fintech criptomonedas pagos plataforma"
+            >
+
+                <div class="project-visual dark">
+
+                    <div class="dashboard">
+
+                        <div class="dashboard-title"></div>
+
+                        <div
+                            style="
+                            margin-top:22px;
+                            height:34px;
+                            border-radius:7px;
+                            background:#f0e7ff;
+                            "
+                        ></div>
+
+                        <div
+                            style="
+                            margin-top:9px;
+                            height:34px;
+                            border-radius:7px;
+                            background:#eee;
+                            "
+                        ></div>
+
+                        <div
+                            style="
+                            margin-top:9px;
+                            height:34px;
+                            border-radius:7px;
+                            background:#eee;
+                            "
+                        ></div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="project-content">
+
+                    <div class="project-top">
+
+                        <span class="category">
+                            Fintech
+                        </span>
+
+                        <span class="badge">
+                            Concepto
+                        </span>
+
+                    </div>
+
+
+                    <h3 class="project-title">
+                        P2P Cuba
+                    </h3>
+
+
+                    <p class="project-description">
+
+                        Concepto de plataforma P2P para gestionar
+                        órdenes, usuarios y operaciones digitales.
+
+                    </p>
+
+
+                    <div class="project-bottom">
+
+                        <span class="tech">
+                            Web · P2P · KYC
+                        </span>
+
+                        <button
+                            class="view-project"
+                            data-project="p2p"
+                        >
+                            Ver detalle →
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- 10 -->
+
+            <article
+                class="project-card"
+                data-category="web"
+                data-search="web corporativa empresa servicios clientes landing"
+            >
+
+                <div class="project-visual">
+
+                    <div class="browser">
+
+                        <div class="browser-top">
+
+                            <span class="browser-dot"></span>
+                            <span class="browser-dot"></span>
+                            <span class="browser-dot"></span>
+
+                        </div>
+
+
+                        <div class="browser-body">
+
+                            <div
+                                class="fake-logo"
+                                style="
+                                background:var(--purple);
+                                "
+                            ></div>
+
+                            <div
+                                class="fake-title"
+                                style="
+                                width:55%;
+                                "
+                            ></div>
+
+                            <div class="fake-text"></div>
+
+                            <div
+                                style="
+                                margin-top:19px;
+                                width:100%;
+                                height:35px;
+                                border-radius:6px;
+                                background:#111;
+                                "
+                            ></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="project-content">
+
+                    <div class="project-top">
+
+                        <span class="category">
+                            Web empresarial
+                        </span>
+
+                        <span class="badge">
+                            Concepto
+                        </span>
+
+                    </div>
+
+
+                    <h3 class="project-title">
+                        Web Corporativa
+                    </h3>
+
+
+                    <p class="project-description">
+
+                        Sitio web profesional diseñado para empresas
+                        que quieren presentar sus servicios y captar clientes.
+
+                    </p>
+
+
+                    <div class="project-bottom">
+
+                        <span class="tech">
+                            HTML · CSS · JavaScript
+                        </span>
+
+                        <button
+                            class="view-project"
+                            data-project="corporativa"
+                        >
+                            Ver detalle →
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+
+        <div class="empty" id="emptyState">
+
+            <strong>
+                No encontramos proyectos.
+            </strong>
+
+            <span>
+                Prueba con otra búsqueda o categoría.
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     CTA
+===================================== -->
+
+<section class="cta" id="contacto">
+
+    <div class="container">
+
+        <div class="cta-box">
+
+            <div class="cta-content">
+
+                <div class="cta-label">
+                    ¿Tienes una idea?
+                </div>
+
+
+                <h2>
+                    Hagamos que tu próximo proyecto sea real.
+                </h2>
+
+
+                <p>
+                    Desarrollo web, aplicaciones, software y
+                    soluciones digitales adaptadas a tu negocio.
+                </p>
+
+            </div>
+
+
+            <!-- CAMBIA EL NUMERO -->
+
+            <a
+                href="https://wa.me/5350000000"
+                target="_blank"
+                class="cta-button"
+            >
+                Hablar con ALFA →
             </a>
 
         </div>
@@ -1834,157 +2758,587 @@
 </section>
 
 
-<!-- =========================
+<!-- =====================================
      FOOTER
-========================= -->
+===================================== -->
 
 <footer>
 
-    <div class="footer-container">
+    <div class="container footer">
 
-        <div class="footer-top">
-
-
-            <div class="footer-brand">
-
-                <div class="footer-logo">
-                    ALFA<span>.</span>
-                </div>
-
-                <p>
-                    Tecnología, marketing y soluciones digitales
-                    para negocios que quieren avanzar.
-                </p>
-
-            </div>
-
-
-            <div class="footer-links">
-
-                <div class="footer-column">
-
-                    <h4>
-                        Servicios
-                    </h4>
-
-                    <a href="#servicios">
-                        Desarrollo web
-                    </a>
-
-                    <a href="#servicios">
-                        Desarrollo de apps
-                    </a>
-
-                    <a href="#servicios">
-                        Marketing
-                    </a>
-
-                    <a href="#servicios">
-                        Soluciones financieras
-                    </a>
-
-                </div>
-
-
-                <div class="footer-column">
-
-                    <h4>
-                        Tecnología
-                    </h4>
-
-                    <a href="#productos">
-                        Productos electrónicos
-                    </a>
-
-                    <a href="#productos">
-                        Piezas de PC
-                    </a>
-
-                    <a href="#servicios">
-                        Sistemas operativos
-                    </a>
-
-                </div>
-
-            </div>
-
+        <div class="footer-logo">
+            ALFA<span>.</span>
         </div>
 
 
-        <div class="footer-bottom">
+        <p>
+            Tecnología y soluciones para hacer crecer tu negocio.
+        </p>
 
-            <span>
-                © 2026 ALFA NEGOCIOS. Todos los derechos reservados.
-            </span>
 
-            <span>
-                Tecnología que mueve negocios.
-            </span>
-
-        </div>
+        <p>
+            © 2026 ALFA NEGOCIOS
+        </p>
 
     </div>
 
 </footer>
 
 
+<!-- =====================================
+     MODAL
+===================================== -->
+
+<div class="modal" id="projectModal">
+
+    <div class="modal-box">
+
+        <button
+            class="modal-close"
+            id="modalClose"
+        >
+            ×
+        </button>
+
+
+        <div
+            class="modal-category"
+            id="modalCategory"
+        ></div>
+
+
+        <h2
+            class="modal-title"
+            id="modalTitle"
+        ></h2>
+
+
+        <p
+            class="modal-description"
+            id="modalDescription"
+        ></p>
+
+
+        <div class="modal-grid">
+
+            <div class="modal-item">
+
+                <small>
+                    Tipo
+                </small>
+
+                <strong id="modalType"></strong>
+
+            </div>
+
+
+            <div class="modal-item">
+
+                <small>
+                    Tecnologías
+                </small>
+
+                <strong id="modalTech"></strong>
+
+            </div>
+
+
+            <div class="modal-item">
+
+                <small>
+                    Estado
+                </small>
+
+                <strong id="modalStatus"></strong>
+
+            </div>
+
+
+            <div class="modal-item">
+
+                <small>
+                    Área
+                </small>
+
+                <strong id="modalArea"></strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
 <script>
 
-    const menuBtn = document.getElementById("menuBtn");
-    const navLinks = document.getElementById("navLinks");
+    /* =====================================
+       PROJECT DATA
+    ===================================== */
 
-    menuBtn.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
-    });
+    const projects = {
+
+        transfermap: {
+
+            category: "Aplicación",
+
+            title: "TransferMap Cuba",
+
+            description:
+                "Concepto de aplicación móvil creada para facilitar la búsqueda de negocios que aceptan pagos digitales. La plataforma combina mapas, directorios de negocios, catálogos y búsqueda de productos.",
+
+            type: "Aplicación móvil",
+
+            tech: "Flutter · Maps · Mobile",
+
+            status: "Proyecto conceptual",
+
+            area: "Tecnología / Comercio"
+
+        },
 
 
-    document.querySelectorAll(".nav-links a").forEach(link => {
+        mapa: {
 
-        link.addEventListener("click", () => {
+            category: "Web",
 
-            navLinks.classList.remove("active");
+            title: "Mapa Habana",
+
+            description:
+                "Mapa web interactivo pensado para mostrar negocios y establecimientos de La Habana mediante puntos dinámicos, búsqueda y categorías.",
+
+            type: "Aplicación web",
+
+            tech: "HTML · CSS · JavaScript",
+
+            status: "Demo",
+
+            area: "Mapas / Directorio"
+
+        },
+
+
+        alfa: {
+
+            category: "Web",
+
+            title: "ALFA NEGOCIOS",
+
+            description:
+                "Landing corporativa diseñada para presentar ALFA NEGOCIOS y sus diferentes áreas: tecnología, soluciones web, marketing, productos electrónicos y servicios empresariales.",
+
+            type: "Landing page",
+
+            tech: "HTML · CSS · JavaScript",
+
+            status: "Proyecto interno",
+
+            area: "Web / Branding"
+
+        },
+
+
+        fintrack: {
+
+            category: "Software",
+
+            title: "FinTrack",
+
+            description:
+                "Concepto de plataforma para controlar las operaciones financieras de un negocio, incluyendo ingresos, gastos, ventas, inventario y movimientos.",
+
+            type: "Sistema web",
+
+            tech: "HTML · CSS · JavaScript",
+
+            status: "Concepto",
+
+            area: "Finanzas / Gestión"
+
+        },
+
+
+        inventario: {
+
+            category: "Software",
+
+            title: "Sistema de Inventario",
+
+            description:
+                "Sistema de gestión diseñado para negocios que necesitan controlar productos, piezas, vehículos, compradores y operaciones de venta.",
+
+            type: "Software empresarial",
+
+            tech: "Django · Python · Tailwind",
+
+            status: "Concepto",
+
+            area: "Gestión empresarial"
+
+        },
+
+
+        marketing: {
+
+            category: "Marketing",
+
+            title: "Marketing Práctico",
+
+            description:
+                "Estrategia de marketing digital enfocada en negocios cubanos. El objetivo es dejar de publicar por publicar y convertir las redes sociales en canales capaces de generar clientes.",
+
+            type: "Servicio",
+
+            tech: "Strategy · Content · Social Media",
+
+            status: "Servicio activo",
+
+            area: "Marketing digital"
+
+        },
+
+
+        bot: {
+
+            category: "Automatización",
+
+            title: "Bot de Ventas",
+
+            description:
+                "Concepto de automatización para gestionar ventas desde Telegram, incluyendo selección de productos, cantidades, clientes, moneda y registro de operaciones.",
+
+            type: "Automatización",
+
+            tech: "Python · Telegram",
+
+            status: "Concepto",
+
+            area: "Automatización comercial"
+
+        },
+
+
+        catalogo: {
+
+            category: "Web",
+
+            title: "Catálogo Digital",
+
+            description:
+                "Sistema de catálogo digital pensado para que negocios puedan mostrar sus productos, precios y disponibilidad mediante un enlace sencillo de compartir.",
+
+            type: "Aplicación web",
+
+            tech: "HTML · CSS · JavaScript",
+
+            status: "Concepto",
+
+            area: "Comercio"
+
+        },
+
+
+        p2p: {
+
+            category: "Fintech",
+
+            title: "P2P Cuba",
+
+            description:
+                "Concepto de plataforma P2P para gestionar operaciones digitales entre usuarios, incorporando verificación, órdenes y diferentes métodos de pago.",
+
+            type: "Plataforma web",
+
+            tech: "Web · P2P · KYC",
+
+            status: "Concepto",
+
+            area: "Fintech"
+
+        },
+
+
+        corporativa: {
+
+            category: "Web empresarial",
+
+            title: "Web Corporativa",
+
+            description:
+                "Concepto de sitio web empresarial diseñado para presentar servicios, transmitir confianza y convertir visitantes en potenciales clientes.",
+
+            type: "Sitio corporativo",
+
+            tech: "HTML · CSS · JavaScript",
+
+            status: "Concepto",
+
+            area: "Web empresarial"
+
+        }
+
+    };
+
+
+    /* =====================================
+       FILTERS
+    ===================================== */
+
+    const filters =
+        document.querySelectorAll(".filter");
+
+
+    const cards =
+        document.querySelectorAll(".project-card");
+
+
+    const searchInput =
+        document.getElementById("searchInput");
+
+
+    const emptyState =
+        document.getElementById("emptyState");
+
+
+    let currentFilter = "all";
+
+
+    filters.forEach(filter => {
+
+        filter.addEventListener("click", () => {
+
+            filters.forEach(item => {
+                item.classList.remove("active");
+            });
+
+
+            filter.classList.add("active");
+
+
+            currentFilter =
+                filter.dataset.filter;
+
+
+            filterProjects();
 
         });
 
     });
 
 
-    // Animaciones al aparecer en pantalla
+    searchInput.addEventListener(
+        "input",
+        filterProjects
+    );
 
-    const observer = new IntersectionObserver(
-        entries => {
 
-            entries.forEach(entry => {
+    function filterProjects() {
 
-                if (entry.isIntersecting) {
+        const query =
+            searchInput.value
+                .toLowerCase()
+                .trim();
 
-                    entry.target.style.opacity = "1";
-                    entry.target.style.transform = "translateY(0)";
 
-                }
+        let visible = 0;
+
+
+        cards.forEach(card => {
+
+            const category =
+                card.dataset.category;
+
+
+            const searchable =
+                card.dataset.search;
+
+
+            const matchesCategory =
+                currentFilter === "all" ||
+                category === currentFilter;
+
+
+            const matchesSearch =
+                searchable.includes(query);
+
+
+            if (
+                matchesCategory &&
+                matchesSearch
+            ) {
+
+                card.classList.remove("hidden");
+
+                visible++;
+
+            } else {
+
+                card.classList.add("hidden");
+
+            }
+
+        });
+
+
+        if (visible === 0) {
+
+            emptyState.classList.add("visible");
+
+        } else {
+
+            emptyState.classList.remove("visible");
+
+        }
+
+    }
+
+
+    /* =====================================
+       MODAL
+    ===================================== */
+
+    const modal =
+        document.getElementById("projectModal");
+
+
+    const modalClose =
+        document.getElementById("modalClose");
+
+
+    const modalCategory =
+        document.getElementById("modalCategory");
+
+
+    const modalTitle =
+        document.getElementById("modalTitle");
+
+
+    const modalDescription =
+        document.getElementById("modalDescription");
+
+
+    const modalType =
+        document.getElementById("modalType");
+
+
+    const modalTech =
+        document.getElementById("modalTech");
+
+
+    const modalStatus =
+        document.getElementById("modalStatus");
+
+
+    const modalArea =
+        document.getElementById("modalArea");
+
+
+    document.querySelectorAll(".view-project")
+        .forEach(button => {
+
+            button.addEventListener("click", () => {
+
+                const id =
+                    button.dataset.project;
+
+
+                const project =
+                    projects[id];
+
+
+                if (!project) return;
+
+
+                modalCategory.textContent =
+                    project.category;
+
+
+                modalTitle.textContent =
+                    project.title;
+
+
+                modalDescription.textContent =
+                    project.description;
+
+
+                modalType.textContent =
+                    project.type;
+
+
+                modalTech.textContent =
+                    project.tech;
+
+
+                modalStatus.textContent =
+                    project.status;
+
+
+                modalArea.textContent =
+                    project.area;
+
+
+                modal.classList.add("active");
+
+                document.body.classList.add(
+                    "modal-open"
+                );
 
             });
 
-        },
-        {
-            threshold: 0.12
+        });
+
+
+    function closeModal() {
+
+        modal.classList.remove("active");
+
+        document.body.classList.remove(
+            "modal-open"
+        );
+
+    }
+
+
+    modalClose.addEventListener(
+        "click",
+        closeModal
+    );
+
+
+    modal.addEventListener(
+        "click",
+        event => {
+
+            if (
+                event.target === modal
+            ) {
+
+                closeModal();
+
+            }
+
         }
     );
 
 
-    document.querySelectorAll(
-        ".service-card, .product, .process, .section-header"
-    ).forEach(element => {
+    document.addEventListener(
+        "keydown",
+        event => {
 
-        element.style.opacity = "0";
-        element.style.transform = "translateY(25px)";
-        element.style.transition = "opacity .6s ease, transform .6s ease";
+            if (
+                event.key === "Escape"
+            ) {
 
-        observer.observe(element);
+                closeModal();
 
-    });
+            }
+
+        }
+    );
 
 </script>
+
 
 </body>
 </html>
